@@ -484,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    16 分
                 </div>
                 
 
@@ -621,6 +621,12 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <p>递归的使用快速排序方法对left进行排序</p>
 <p>递归的使用快速排序方法对right进行排序。</p>
 <p>所得结果为left+middle+right</p>
+<p>//</p>
+<ol>
+<li>从数组中取出一个数,作为<strong>基准数</strong></li>
+<li>分区:将比这个数[基准数]大或者等于的数全部放在它的右边,小于它的数全部放在它的左边</li>
+<li>再对左右分区间重复第二步骤,直到各分区只有一个数</li>
+</ol>
 </blockquote>
 <h3 id="12-String底层是怎么实现的"><a href="#12-String底层是怎么实现的" class="headerlink" title="12 .String底层是怎么实现的"></a>12 .String底层是怎么实现的</h3><blockquote>
 <p>String类的一个最大特性是不可修改性，而导致其不可修改的原因是在String内部定义了一个常量数组final char数组，因此每次对字符串的操作实际上都会另外分配,分配一个新的常量数组空间</p>
@@ -908,7 +914,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <p>递归坏处：由于递归需要系统堆栈，所以空间消耗要比非递归代码要大很多。而且，如果递归深度太大，可能系统撑不住。</p>
 <p>循环方法比递归方法快, 因为循环避免了一系列函数调用和返回中所涉及到的参数传递和返回值的额外开销。</p>
 </blockquote>
-<h3 id="17-UTF-8和GDK区别"><a href="#17-UTF-8和GDK区别" class="headerlink" title="17. UTF-8和GDK区别"></a>17. UTF-8和GDK区别</h3><blockquote>
+<h3 id="17-UTF-8和GBK区别"><a href="#17-UTF-8和GBK区别" class="headerlink" title="17. UTF-8和GBK区别"></a>17. UTF-8和GBK区别</h3><blockquote>
 <p>UTF－8编码用以解决国际上字符的一种多字节编码。它对英文使用1个字节,中文3个字节。。</p>
 <p>GBK通俗点将就是我们国家自己的编码方式。它对中英文都采用双字节表示,GBK是GB2312在量上的扩充，并没有质的区别，向后兼容。</p>
 </blockquote>
@@ -1389,7 +1395,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">336.9k</span>&nbsp;字
+                class="white-color">337.4k</span>&nbsp;字
             
             
             

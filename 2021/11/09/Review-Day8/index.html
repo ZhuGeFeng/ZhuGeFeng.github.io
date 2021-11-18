@@ -513,11 +513,10 @@
 <p>反射是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为 Java 语言的反射机制</p>
 </blockquote>
 <h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><blockquote>
-<ul>
-<li>反射让开发人员可以通过外部类的全路径名创建对象，并使用这些类，实现一些扩展的功能。</li>
-<li>反射让开发人员可以枚举出类的全部成员，包括构造函数、属性、方法。以帮助开发者写出正确的代码。</li>
-<li>测试时可以利用反射 API 访问类的私有成员，以保证测试代码覆盖率。</li>
-</ul>
+<p>通过反射可以使程序代码访问装载到JVM 中的类的内部信息</p>
+<p>a) 获取已装载类的属性信息</p>
+<p>b) 获取已装载类的方法</p>
+<p>c) 获取已装载类的构造方法信息</p>
 </blockquote>
 <h2 id="二-class"><a href="#二-class" class="headerlink" title="二. class"></a>二. class</h2><blockquote>
 <p>class实例 - 一个类无论被实例化多少次,它在JVM中的class实例永远只有1个.</p>
@@ -607,8 +606,6 @@ Class <span class="token class-name">clz</span> <span class="token operator">=</
 <blockquote>
 <ul>
 <li>静态代理 - 指使用 AOP 框架提供的命令进行编译，从而在编译阶段就可生成 AOP 代理类，因此也称为编译时增强；</li>
-<li>编译时编织（特殊编译器实现）</li>
-<li>类加载时编织（特殊的类加载器实现）。</li>
 </ul>
 </blockquote>
 <h2 id="六-注解开发和XML开发区别"><a href="#六-注解开发和XML开发区别" class="headerlink" title="六. 注解开发和XML开发区别"></a>六. 注解开发和XML开发区别</h2><blockquote>
@@ -1192,7 +1189,7 @@ Class <span class="token class-name">clz</span> <span class="token operator">=</
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">336.9k</span>&nbsp;字
+                class="white-color">337.4k</span>&nbsp;字
             
             
             

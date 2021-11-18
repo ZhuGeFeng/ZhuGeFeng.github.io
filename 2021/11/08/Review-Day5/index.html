@@ -794,7 +794,7 @@
 <ul>
 <li><p>实现层面不一样。synchronized 是 Java 关键字，在JVM层面实现加锁和释放锁；Lock 是一个接口，在代码层面实现加锁和释放锁</p>
 </li>
-<li><p>是否自动释放锁。synchronized 在线程代码执行完或出现异常时自动释放锁；Lock 不会自动释放锁，需要再 finally {} 代码块显式地中释放锁</p>
+<li><p>是否自动释放锁。synchronized 在线程代码执行完或出现异常时自动释放锁；Lock 不会自动释放锁，需要在finally {} 代码块显式地中释放锁</p>
 </li>
 <li><p>是否一直等待。<strong>synchronized 会导致线程拿不到锁一直等待</strong>；<strong>Lock 可以设置尝试获取锁或者获取锁失败一定时间超时</strong></p>
 </li>
@@ -1312,7 +1312,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">336.9k</span>&nbsp;字
+                class="white-color">337.4k</span>&nbsp;字
             
             
             

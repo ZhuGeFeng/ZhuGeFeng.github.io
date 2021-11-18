@@ -477,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.5k
+                    3.6k
                 </div>
                 
 
@@ -586,7 +586,7 @@
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Map、Set、List的区别-写出常见的几个实现类，如果对一个set的数据进行排序，应该如何做？"><a href="#Map、Set、List的区别-写出常见的几个实现类，如果对一个set的数据进行排序，应该如何做？" class="headerlink" title="Map、Set、List的区别.写出常见的几个实现类，如果对一个set的数据进行排序，应该如何做？"></a>Map、Set、List的区别.写出常见的几个实现类，如果对一个set的数据进行排序，应该如何做？</h2><blockquote>
-<p>List和Set继承了Collection接口, List是一个有序可重复的容器, 可以设置多个null, 主要对List接口实现的有ArrayList, LinkedList, Vector. Set是一个无需且不可重复的容器, 可以多个null键, 但始终只有一个null键, 并且不会对第一个null键对应的值进行覆盖, 主要对Set接口实现的类有, HashSet, TreeSet. Map就是一个接口, Map 的 每个 Entry 都持有两个对象，也就是一个键一个值，Map 可能会持有相同的值对象但键对象必须是唯一的.可以多个null键, 但会对第一个null键的值进行覆盖操作.主要对Map接口实现的类有:HashMap, TreeMap, HashTable</p>
+<p>List和Set继承了Collection接口, List是一个有序可重复的容器, 可以设置多个null, 主要对List接口实现的有ArrayList, LinkedList, Vector. Set是一个无序且不可重复的容器, 可以多个null键, 但始终只有一个null键, 并且会对第一个null键对应的值进行覆盖, 主要对Set接口实现的类有, HashSet, TreeSet. Map就是一个接口, Map 的 每个 Entry 都持有两个对象，也就是一个键一个值，Map 可能会持有相同的值对象但键对象必须是唯一的.可以多个null键, 但会对第一个null键的值进行覆盖操作.主要对Map接口实现的类有:HashMap, TreeMap, HashTable</p>
 </blockquote>
 <blockquote>
 <ol>
@@ -628,7 +628,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
 <h2 id="画出SSM框架响应一个浏览器请求的完整流程"><a href="#画出SSM框架响应一个浏览器请求的完整流程" class="headerlink" title="画出SSM框架响应一个浏览器请求的完整流程"></a>画出SSM框架响应一个浏览器请求的完整流程</h2><p>1、用户发送请求url至前端控制器DispatcherServlet。<br>2、DispatcherServlet收到请求调用处理器映射器HandlerMapping。<br>3、处理器映射器根据请求url找到具体的处理器，生成处理器执行链HandlerExecutionChain(包括处理器对象和处理器拦截器)一并返回给DispatcherServlet。<br>4、DispatcherServlet根据处理器Handler获取处理器适配器HandlerAdapter，执行HandlerAdapter处理一系列的操作，如：参数封装，数据格式转换，数据验证等操作。<br>5、执行处理器Handler(Controller，也叫页面控制器)。<br>6、Handler执行完成返回ModelAndView。<br>7、HandlerAdapter将Handler执行结果ModelAndView返回到DispatcherServlet。<br>8、DispatcherServlet将ModelAndView传给ViewReslover视图解析器。<br>9、View Reslover解析后返回具体View。<br>10、DispatcherServlet对View进行渲染视图（即将模型数据model填充至视图中）。<br>11、DispatcherServlet响应用户。</p>
-<p>注意：5中，Controller层 调Service层（其中，Service层调用DAO层），业务层（Service层）主要涉及业务处理，数据访问层（DAO层）主要负责数据持久化的工作，用来连接数据库，完成数据的增删改查操作。<br><img src="/2021/11/13/Review-Day11/Necessary\1118.png"></p>
+<p>注意：5中，Controller层 调Service层（其中，Service层调用DAO层），业务层（Service层）主要涉及业务处理，数据访问层（DAO层）主要负责数据持久化的工作，用来连接数据库，完成数据的增删改查操作。<br><img src="/2021/11/13/Review-Day11/1118.png"></p>
 <h2 id="简述一个单例模式和工厂模式，以及常见应用场景"><a href="#简述一个单例模式和工厂模式，以及常见应用场景" class="headerlink" title="简述一个单例模式和工厂模式，以及常见应用场景"></a>简述一个单例模式和工厂模式，以及常见应用场景</h2><p>单例：在我们日常的工作中经常需要在应用程序中保持一个唯一的实例，如：<em><strong>Spring的Bean标签，数据库连接池等</strong></em>，由于这些对象都要占用重要的系统资源，所以我们必须限制这些实例的创建或始终使用一个公用的实例，这就是单例模式（Singleton）。</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>  
     <span class="token keyword">private</span> <span class="token keyword">static</span> Singleton instance<span class="token punctuation">;</span>  
@@ -648,11 +648,12 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 在软件开发中<span class="token punctuation">,</span>当我们需要大量的创某种<span class="token punctuation">,</span>某类或者某一批对象的时候<span class="token punctuation">,</span>就可以考虑使用简单工厂模式
 简单工厂一般分为<span class="token operator">:</span>普通简单工厂<span class="token punctuation">,</span>多方法简单工厂<span class="token punctuation">,</span>静态方法简单工
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>工厂模式：简单工厂模式是由一个工厂对象决定创建出哪一种产品类的实例，在简单工厂模式中,我们会定义一个创建对象的类,多使用反射的方法来创建具体产品实例,这个类用来封装实例化对象的行为，在软件开发中,当我们需要大量的创某种,某类或者某一批对象的时候,就可以考虑使用简单工厂模式（比如查询数据库）</p>
+<p>工厂模式：是有一组类似的对象需要创建,包括工厂方法模式,抽象工厂模式</p>
+<p>简单工厂模式是由一个工厂对象决定创建出哪一种产品类的实例，在简单工厂模式中,我们会定义一个创建对象的类,多使用反射的方法来创建具体产品实例,这个类用来封装实例化对象的行为，在软件开发中,当我们需要大量的创某种,某类或者某一批对象的时候,就可以考虑使用简单工厂模式（比如查询数据库）</p>
 <h2 id="写出hibernate或者mybatis中，一对一与一对多的配置方法"><a href="#写出hibernate或者mybatis中，一对一与一对多的配置方法" class="headerlink" title="写出hibernate或者mybatis中，一对一与一对多的配置方法"></a>写出hibernate或者mybatis中，一对一与一对多的配置方法</h2><p><img src="/2021/11/13/Review-Day11/11131.png"></p>
 <p><img src="/2021/11/13/Review-Day11/11132.png"></p>
 <h2 id="Sql语句中leftjoin和innerjoin有何区别"><a href="#Sql语句中leftjoin和innerjoin有何区别" class="headerlink" title="Sql语句中leftjoin和innerjoin有何区别"></a>Sql语句中leftjoin和innerjoin有何区别</h2><p>left join 左连接,假设有两张表,分别是A表和B表,以A表为基准表,如果A表的记录在B表不存在,也能够查询出来.</p>
-<p>inner join 内连接,只返回两个表中联结字段相等的行</p>
+<p>inner join 内连接,只返回两个表中连接字段相等的行</p>
 <h2 id="给一些数据类型，写出对应的xml表达方式和json表达方式"><a href="#给一些数据类型，写出对应的xml表达方式和json表达方式" class="headerlink" title="给一些数据类型，写出对应的xml表达方式和json表达方式"></a>给一些数据类型，写出对应的xml表达方式和json表达方式</h2><p>xml</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span>book id<span class="token operator">=</span><span class="token string">"bk101"</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>author<span class="token operator">></span>Gambardella<span class="token punctuation">,</span> Matthew<span class="token operator">&lt;</span><span class="token operator">/</span>author<span class="token operator">></span>
@@ -1162,7 +1163,7 @@ with XML<span class="token punctuation">.</span>&lt;<span class="token operator"
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">336.9k</span>&nbsp;字
+                class="white-color">337.4k</span>&nbsp;字
             
             
             

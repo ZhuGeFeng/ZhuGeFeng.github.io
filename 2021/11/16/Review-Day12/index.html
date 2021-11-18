@@ -477,14 +477,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.3k
+                    6.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    22 分
+                    23 分
                 </div>
                 
 
@@ -523,7 +523,7 @@
 <h2 id="2-什么是IOC，有什么好处？底层用什么技术实现？"><a href="#2-什么是IOC，有什么好处？底层用什么技术实现？" class="headerlink" title="2.什么是IOC，有什么好处？底层用什么技术实现？"></a>2.什么是IOC，有什么好处？底层用什么技术实现？</h2><blockquote>
 <p>Ioc—Inversion of Control，即“控制反转”，一种设计思想。在Java开发中，Ioc意味着将你设计好的对象交给容器控制，而不是传统的在你的对象内部直接控制。</p>
 <p><strong>IOC的优点:</strong><br>第一，资源集中管理，实现<strong>资源的可配置和易管理</strong>。<br>第二，降低了使用资源双方的依赖程度，也就是我们说的<strong>耦合度</strong>。</p>
-<h5 id="IOC底层原理使用的技术"><a href="#IOC底层原理使用的技术" class="headerlink" title="IOC底层原理使用的技术"></a>IOC底层原理使用的技术</h5><h5 id="（1）xml配置文件"><a href="#（1）xml配置文件" class="headerlink" title="（1）xml配置文件"></a>（1）xml配置文件</h5><p>（2）dom4j解析xml<br>（3）工厂模式<br>（4）反射</p>
+<h5 id="IOC底层原理使用的技术"><a href="#IOC底层原理使用的技术" class="headerlink" title="IOC底层原理使用的技术"></a>IOC底层原理使用的技术</h5><h5 id="xml配置文件"><a href="#xml配置文件" class="headerlink" title="xml配置文件"></a>xml配置文件</h5><p>工厂模式<br>反射</p>
 </blockquote>
 <h2 id="3-什么是AOP-使用场景是什么？AOP底层技术是什么？两种代理模式的区别是什么？"><a href="#3-什么是AOP-使用场景是什么？AOP底层技术是什么？两种代理模式的区别是什么？" class="headerlink" title="3.什么是AOP? 使用场景是什么？AOP底层技术是什么？两种代理模式的区别是什么？"></a>3.什么是AOP? 使用场景是什么？AOP底层技术是什么？两种代理模式的区别是什么？</h2><blockquote>
 <p><strong>AOP面向切面编程</strong></p>
@@ -634,35 +634,38 @@
 <ul>
 <li>快速构建项目。</li>
 <li>对主流开发框架的无配置集成；与其Spring生态系统(如Spring JDBC，Spring ORM，Spring Data，Spring Security等)集成非常容易</li>
-<li>项目可独立运行，无须外部依赖Servlet容器。</li>
+<li><strong>项目可独立运行，无须外部依赖Servlet容器</strong>。</li>
 <li>提供运行时的应用监控。</li>
 <li>极大地提高了开发、部署效率。</li>
-<li>与<a target="_blank" rel="noopener" href="http://c.biancheng.net/cloud_computing/">云计算</a>的天然集成。</li>
 <li>去除了大量的xml配置文件</li>
-<li>简化复杂的依赖管理</li>
-<li>简化配置,简化编码</li>
+<li><strong>简化复杂的依赖管理</strong></li>
+<li><strong>自动化配置,简化编码</strong></li>
 </ul>
 </blockquote>
 <h2 id="9-SpringBoot有哪些常用的注解？"><a href="#9-SpringBoot有哪些常用的注解？" class="headerlink" title="9.SpringBoot有哪些常用的注解？"></a>9.SpringBoot有哪些常用的注解？</h2><blockquote>
-<p><code>@SpringBootApplication</code> </p>
-<p><code>@RestController</code> </p>
-<p><code>@Configuration</code></p>
-<p><code>@PathVariable</code> </p>
-<p><code>@RequestParam</code></p>
-<p><code>@RequestBody</code></p>
+<p><code>@SpringBootApplication</code> 申明让spring boot自动给程序进行必要的配置</p>
+<p><code>@RestController</code> 标注控制层组件</p>
+<p><code>@Configuration</code>指出该类是Bean配置的信息源</p>
+<p><code>@PathVariable</code> 获取参数</p>
+<p>@Autowired自动导入。</p>
+<p>@Service 标注业务层组件</p>
 </blockquote>
 <h2 id="10-什么是Restful-编程风格？"><a href="#10-什么是Restful-编程风格？" class="headerlink" title="10. 什么是Restful 编程风格？"></a>10. 什么是Restful 编程风格？</h2><blockquote>
-<p>Restful 风格的 API 是一种软件架构风格，设计风格而不是标准，只是提供了一组设计原则和约束条件。它主要用于客户端和服务器交互类的软件。基于这个风格设计的软件可以更简洁，更有层次，更易于实现缓存等机制</p>
 <p>（1）每一个URI代表一种资源；</p>
 <p>（2）客户端和服务器之间，传递这种资源的某种表现层；</p>
 <p>（3）客户端通过四个HTTP动词，对服务器端资源进行操作，实现”表现层状态转化”。</p>
 </blockquote>
 <h2 id="11-Redis中有哪些数据类型？"><a href="#11-Redis中有哪些数据类型？" class="headerlink" title="11.Redis中有哪些数据类型？"></a>11.Redis中有哪些数据类型？</h2><blockquote>
-<p>String: 字符串(value为一个字符串)</p>
-<p>List: 列表(一个key可以存放多个字符串/元素)</p>
-<p>Hash: 哈希表(通过哈希表存储元素)</p>
-<p>Set: 无序集合(无序不可以重复)</p>
-<p>Sorted Set: 有序集合(是一个有条件的有序, 要在后面加一个元素score, 通过一定的条件去排序)</p>
+<p><strong>五种常用的数据类型</strong>：</p>
+<p>1、String：String是最常用的一种数据类型，普通的key- value 存储都可以归为此类。其中Value既可以是数字也可以是字符串。使用场景：常规key-value缓存应用。常规计数: 微博数， 粉丝数。</p>
+<p>2、Hash：Hash 是一个键值(key =&gt; value)对集合。Redishash 是一个 string 类型的 field 和 value 的映射表，hash 特别适合用于存储对象，并且可以像数据库中update一个属性一样只修改某一项属性值。</p>
+<p>3、Set：Set是一个无序不重复集合，即Key-Set。此外还提供了交集、并集等一系列直接操作集合的方法，对于求共同好友、共同关注什么的功能实现特别方便。</p>
+<p>4、List：List是一个有序可重复的集合，其遵循FIFO的原则，底层是依赖双向链表实现的，因此支持正向、反向双重查找。通过List，我们可以很方面的获得类似于最新回复这类的功能实现。</p>
+<p>5、SortedSet：有序集合,类似于java中的TreeSet，是Set的可排序版。此外还支持优先级排序，维护了一个score的参数来实现。适用于排行榜和带权重的消息队列等场景。</p>
+<p><strong>三种特殊的数据类型</strong>：</p>
+<p>1、Bitmap：位图，Bitmap想象成一个以位为单位数组，数组中的每个单元只能存0或者1，数组的下标在Bitmap中叫做偏移量。使用Bitmap实现统计功能，更省空间。如果只需要统计数据的二值状态，例如商品有没有、用户在不在等，就可以使用 Bitmap，因为它只用一个 bit 位就能表示 0 或 1。</p>
+<p>2、Hyperloglog。统计不重复数据, 用于大数据基数统计</p>
+<p>3、Geospatial ：主要用于存储地理位置信息，并对存储的信息进行操作，适用场景如朋友的定位、附近的人、打车距离计算</p>
 </blockquote>
 <h2 id="12-你在哪些业务中使用过Redis？（使用场景）"><a href="#12-你在哪些业务中使用过Redis？（使用场景）" class="headerlink" title="12. 你在哪些业务中使用过Redis？（使用场景）"></a>12. 你在哪些业务中使用过Redis？（使用场景）</h2><blockquote>
 <p>秒杀</p>
@@ -777,7 +780,7 @@
 <blockquote>
 <p>如何选择：针对一些恶意攻击，攻击带过来的大量key是随机，那么我们采用第一种方案就会缓存大量不存在key的数据。那么这种方案就不合适了，我们可以先对使用布隆过滤器方案进行过滤掉这些key。所以，针对这种key异常多、请求重复率比较低的数据，优先使用第二种方案直接过滤掉。而对于空数据的key有限的，重复率比较高的，则可优先采用第一种方式进行缓存。</p>
 </blockquote>
-<h2 id="什么是缓存雪崩"><a href="#什么是缓存雪崩" class="headerlink" title="什么是缓存雪崩?"></a>什么是缓存雪崩?</h2><p>如果缓在某一个时刻出现大规模的key失效，那么就会导致大量的请求打在了数据库上面，导致数据库压力巨大，如果在高并发的情况下，可能瞬间就会导致数据库宕机。这时候如果运维马上又重启数据库，马上又会有新的流量把数据库打死。这就是缓存雪崩。</p>
+<h2 id="什么是缓存雪崩"><a href="#什么是缓存雪崩" class="headerlink" title="什么是缓存雪崩?"></a>什么是缓存雪崩?</h2><p>如果缓存在某一个时刻出现大规模的key失效，那么就会导致大量的请求打在了数据库上面，导致数据库压力巨大，如果在高并发的情况下，可能瞬间就会导致数据库宕机。这时候如果运维马上又重启数据库，马上又会有新的流量把数据库打死。这就是缓存雪崩。</p>
 <p>造成缓存雪崩的关键在于同一时间的大规模的key失效，主要有两种可能：第一种是Redis宕机，第二种可能就是采用了相同的过期时间。</p>
 <p>解决方案：</p>
 <p>1、事前：</p>
@@ -1315,7 +1318,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">336.9k</span>&nbsp;字
+                class="white-color">337.4k</span>&nbsp;字
             
             
             

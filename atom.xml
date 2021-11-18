@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-11-17T11:57:09.283Z</updated>
+  <updated>2021-11-18T09:02:23.325Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2021/11/16/Review-Day12/"/>
     <id>http://example.com/2021/11/16/Review-Day12/</id>
     <published>2021-11-16T06:39:34.000Z</published>
-    <updated>2021-11-17T11:57:09.283Z</updated>
+    <updated>2021-11-18T09:02:23.325Z</updated>
     
     
       
@@ -46,7 +46,7 @@
     <link href="http://example.com/2021/11/13/Review-Day11/"/>
     <id>http://example.com/2021/11/13/Review-Day11/</id>
     <published>2021-11-13T06:05:23.000Z</published>
-    <updated>2021-11-14T10:44:42.378Z</updated>
+    <updated>2021-11-18T13:05:56.660Z</updated>
     
     
       
@@ -71,7 +71,7 @@
     <link href="http://example.com/2021/11/12/Review-Day10/"/>
     <id>http://example.com/2021/11/12/Review-Day10/</id>
     <published>2021-11-12T12:59:28.000Z</published>
-    <updated>2021-11-17T13:08:24.444Z</updated>
+    <updated>2021-11-18T12:12:51.036Z</updated>
     
     
       
@@ -123,7 +123,7 @@
     <link href="http://example.com/2021/11/09/Review-Day8/"/>
     <id>http://example.com/2021/11/09/Review-Day8/</id>
     <published>2021-11-09T08:39:29.000Z</published>
-    <updated>2021-11-12T05:35:14.703Z</updated>
+    <updated>2021-11-18T01:09:07.206Z</updated>
     
     
       
@@ -173,7 +173,7 @@
     <link href="http://example.com/2021/11/08/Review-Day6/"/>
     <id>http://example.com/2021/11/08/Review-Day6/</id>
     <published>2021-11-08T10:39:22.000Z</published>
-    <updated>2021-11-11T01:36:50.797Z</updated>
+    <updated>2021-11-18T07:15:03.462Z</updated>
     
     
       
@@ -198,7 +198,7 @@
     <link href="http://example.com/2021/11/08/Review-Day5/"/>
     <id>http://example.com/2021/11/08/Review-Day5/</id>
     <published>2021-11-08T01:56:23.000Z</published>
-    <updated>2021-11-08T10:39:04.254Z</updated>
+    <updated>2021-11-18T06:37:59.780Z</updated>
     
     
       
@@ -223,7 +223,7 @@
     <link href="http://example.com/2021/11/06/Review-Day4/"/>
     <id>http://example.com/2021/11/06/Review-Day4/</id>
     <published>2021-11-06T06:22:40.000Z</published>
-    <updated>2021-11-17T10:02:20.076Z</updated>
+    <updated>2021-11-18T12:41:06.968Z</updated>
     
     
       
@@ -248,7 +248,7 @@
     <link href="http://example.com/2021/11/05/Review-Day3/"/>
     <id>http://example.com/2021/11/05/Review-Day3/</id>
     <published>2021-11-05T03:28:14.000Z</published>
-    <updated>2021-11-11T02:04:13.604Z</updated>
+    <updated>2021-11-18T05:36:58.213Z</updated>
     
     
       
@@ -323,7 +323,7 @@
     <link href="http://example.com/2021/11/03/Review-Day1/"/>
     <id>http://example.com/2021/11/03/Review-Day1/</id>
     <published>2021-11-03T00:58:04.000Z</published>
-    <updated>2021-11-13T06:23:33.571Z</updated>
+    <updated>2021-11-18T02:12:39.949Z</updated>
     
     
       
