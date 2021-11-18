@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>码农耕地人</title>
+  
+  <subtitle>青墨书晚风</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-11-17T11:57:09.283Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>码农耕地人</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Review-Day12</title>
+    <link href="http://example.com/2021/11/16/Review-Day12/"/>
+    <id>http://example.com/2021/11/16/Review-Day12/</id>
+    <published>2021-11-16T06:39:34.000Z</published>
+    <updated>2021-11-17T11:57:09.283Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-Http协议中，get与post的区别。&quot;&gt;&lt;a href=&quot;#1-Http协议中，get与post的区别。&quot; class=&quot;headerlink&quot; title=&quot;1. Http协议中，get与post的区别。&quot;&gt;&lt;/a&gt;1.</summary>
+        
+      
+    
+    
+    
+    <category term="Review" scheme="http://example.com/categories/Review/"/>
+    
+    
+    <category term="Review" scheme="http://example.com/tags/Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Review-Day11</title>
+    <link href="http://example.com/2021/11/13/Review-Day11/"/>
+    <id>http://example.com/2021/11/13/Review-Day11/</id>
+    <published>2021-11-13T06:05:23.000Z</published>
+    <updated>2021-11-14T10:44:42.378Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;复习day11&quot;&gt;&lt;a href=&quot;#复习day11&quot; class=&quot;headerlink&quot; title=&quot;复习day11&quot;&gt;&lt;/a&gt;复习day11&lt;/h1&gt;&lt;h2 id=&quot;JAVA多线程如何来实现&quot;&gt;&lt;a href=&quot;#JAVA多线程如何来实现&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Review" scheme="http://example.com/categories/Review/"/>
+    
+    
+    <category term="Review" scheme="http://example.com/tags/Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Review-Day10</title>
+    <link href="http://example.com/2021/11/12/Review-Day10/"/>
+    <id>http://example.com/2021/11/12/Review-Day10/</id>
+    <published>2021-11-12T12:59:28.000Z</published>
+    <updated>2021-11-17T13:08:24.444Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-JDBC6大编程步骤&quot;&gt;&lt;a href=&quot;#1-JDBC6大编程步骤&quot; class=&quot;headerlink&quot; title=&quot;1.JDBC6大编程步骤&quot;&gt;&lt;/a&gt;1.JDBC6大编程步骤&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;加载驱动 -</summary>
+        
+      
+    
+    
+    
+    <category term="Review" scheme="http://example.com/categories/Review/"/>
+    
+    
+    <category term="Review" scheme="http://example.com/tags/Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Review-Day9</title>
+    <link href="http://example.com/2021/11/11/Review-Day9/"/>
+    <id>http://example.com/2021/11/11/Review-Day9/</id>
+    <published>2021-11-11T05:46:17.000Z</published>
+    <updated>2021-11-15T00:45:40.866Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;复习day9&quot;&gt;&lt;a href=&quot;#复习day9&quot; class=&quot;headerlink&quot; title=&quot;复习day9&quot;&gt;&lt;/a&gt;复习day9&lt;/h1&gt;&lt;h2 id=&quot;数据库&quot;&gt;&lt;a href=&quot;#数据库&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Review" scheme="http://example.com/categories/Review/"/>
+    
+    
+    <category term="Review" scheme="http://example.com/tags/Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Review-Day8</title>
+    <link href="http://example.com/2021/11/09/Review-Day8/"/>
+    <id>http://example.com/2021/11/09/Review-Day8/</id>
+    <published>2021-11-09T08:39:29.000Z</published>
+    <updated>2021-11-12T05:35:14.703Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;复习day8&quot;&gt;&lt;a href=&quot;#复习day8&quot; class=&quot;headerlink&quot; title=&quot;复习day8&quot;&gt;&lt;/a&gt;复习day8&lt;/h1&gt;&lt;h2 id=&quot;一-反射&quot;&gt;&lt;a href=&quot;#一-反射&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Review" scheme="http://example.com/categories/Review/"/>
+    
+    
+    <category term="Review" scheme="http://example.com/tags/Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Review-Day7</title>
+    <link href="http://example.com/2021/11/09/Review-Day7/"/>
+    <id>http://example.com/2021/11/09/Review-Day7/</id>
+    <published>2021-11-09T02:14:42.000Z</published>
+    <updated>2021-11-10T02:30:08.936Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;复习day7&quot;&gt;&lt;a href=&quot;#复习day7&quot; class=&quot;headerlink&quot; title=&quot;复习day7&quot;&gt;&lt;/a&gt;复习day7&lt;/h1&gt;&lt;h2 id=&quot;一-字节流和字符流&quot;&gt;&lt;a href=&quot;#一-字节流和字符流&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Review" scheme="http://example.com/categories/Review/"/>
+    
+    
+    <category term="Review" scheme="http://example.com/tags/Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Review-Day6</title>
+    <link href="http://example.com/2021/11/08/Review-Day6/"/>
+    <id>http://example.com/2021/11/08/Review-Day6/</id>
+    <published>2021-11-08T10:39:22.000Z</published>
+    <updated>2021-11-11T01:36:50.797Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;复习day6&quot;&gt;&lt;a href=&quot;#复习day6&quot; class=&quot;headerlink&quot; title=&quot;复习day6&quot;&gt;&lt;/a&gt;复习day6&lt;/h1&gt;&lt;h2 id=&quot;1-线程生命周期-状态&quot;&gt;&lt;a href=&quot;#1-线程生命周期-状态&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Review" scheme="http://example.com/categories/Review/"/>
+    
+    
+    <category term="Review" scheme="http://example.com/tags/Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Review-Day5</title>
+    <link href="http://example.com/2021/11/08/Review-Day5/"/>
+    <id>http://example.com/2021/11/08/Review-Day5/</id>
+    <published>2021-11-08T01:56:23.000Z</published>
+    <updated>2021-11-08T10:39:04.254Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;复习day5&quot;&gt;&lt;a href=&quot;#复习day5&quot; class=&quot;headerlink&quot; title=&quot;复习day5&quot;&gt;&lt;/a&gt;复习day5&lt;/h1&gt;&lt;h2 id=&quot;1-泛型Generic&quot;&gt;&lt;a href=&quot;#1-泛型Generic&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Review" scheme="http://example.com/categories/Review/"/>
+    
+    
+    <category term="Review" scheme="http://example.com/tags/Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Review-Day4</title>
+    <link href="http://example.com/2021/11/06/Review-Day4/"/>
+    <id>http://example.com/2021/11/06/Review-Day4/</id>
+    <published>2021-11-06T06:22:40.000Z</published>
+    <updated>2021-11-17T10:02:20.076Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;复习day4&quot;&gt;&lt;a href=&quot;#复习day4&quot; class=&quot;headerlink&quot; title=&quot;复习day4&quot;&gt;&lt;/a&gt;复习day4&lt;/h1&gt;&lt;h2 id=&quot;一-ArrayList&quot;&gt;&lt;a href=&quot;#一-ArrayList&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Review" scheme="http://example.com/categories/Review/"/>
+    
+    
+    <category term="Review" scheme="http://example.com/tags/Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Review-Day3</title>
+    <link href="http://example.com/2021/11/05/Review-Day3/"/>
+    <id>http://example.com/2021/11/05/Review-Day3/</id>
+    <published>2021-11-05T03:28:14.000Z</published>
+    <updated>2021-11-11T02:04:13.604Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;复习day3&quot;&gt;&lt;a href=&quot;#复习day3&quot; class=&quot;headerlink&quot; title=&quot;复习day3&quot;&gt;&lt;/a&gt;复习day3&lt;/h1&gt;&lt;h2 id=&quot;1-String-底层原理-创建方式-常量池&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Review" scheme="http://example.com/categories/Review/"/>
+    
+    
+    <category term="Review" scheme="http://example.com/tags/Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Review-Day2</title>
+    <link href="http://example.com/2021/11/04/Review-Day2/"/>
+    <id>http://example.com/2021/11/04/Review-Day2/</id>
+    <published>2021-11-04T00:53:37.000Z</published>
+    <updated>2021-11-11T07:41:55.826Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;复习day2&quot;&gt;&lt;a href=&quot;#复习day2&quot; class=&quot;headerlink&quot; title=&quot;复习day2&quot;&gt;&lt;/a&gt;复习day2&lt;/h1&gt;&lt;h2 id=&quot;一-面向对象&quot;&gt;&lt;a href=&quot;#一-面向对象&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Review" scheme="http://example.com/categories/Review/"/>
+    
+    
+    <category term="Review" scheme="http://example.com/tags/Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES的使用</title>
+    <link href="http://example.com/2021/11/03/ES%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://example.com/2021/11/03/ES%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+    <published>2021-11-03T01:04:16.000Z</published>
+    <updated>2021-11-03T01:09:36.623Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Elasticsearch的使用&quot;&gt;&lt;a href=&quot;#Elasticsearch的使用&quot; class=&quot;headerlink&quot; title=&quot;Elasticsearch的使用&quot;&gt;&lt;/a&gt;Elasticsearch的使用&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="ES" scheme="http://example.com/categories/ES/"/>
+    
+    
+    <category term="ES" scheme="http://example.com/tags/ES/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Review-Day1</title>
+    <link href="http://example.com/2021/11/03/Review-Day1/"/>
+    <id>http://example.com/2021/11/03/Review-Day1/</id>
+    <published>2021-11-03T00:58:04.000Z</published>
+    <updated>2021-11-13T06:23:33.571Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;复习day1&quot;&gt;&lt;a href=&quot;#复习day1&quot; class=&quot;headerlink&quot; title=&quot;复习day1&quot;&gt;&lt;/a&gt;复习day1&lt;/h1&gt;&lt;h2 id=&quot;一-Java基础&quot;&gt;&lt;a href=&quot;#一-Java基础&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Review" scheme="http://example.com/categories/Review/"/>
+    
+    
+    <category term="Review" scheme="http://example.com/tags/Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux安装Redis</title>
+    <link href="http://example.com/2021/11/01/Linux%E5%AE%89%E8%A3%85Redis/"/>
+    <id>http://example.com/2021/11/01/Linux%E5%AE%89%E8%A3%85Redis/</id>
+    <published>2021-11-01T07:22:18.000Z</published>
+    <updated>2021-11-01T16:22:34.497Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装Redis&quot;&gt;&lt;a href=&quot;#安装Redis&quot; class=&quot;headerlink&quot; title=&quot;安装Redis&quot;&gt;&lt;/a&gt;安装Redis&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-java&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    
+    <category term="Redis" scheme="http://example.com/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>伪分布式环境搭建步骤</title>
+    <link href="http://example.com/2021/10/26/%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4/"/>
+    <id>http://example.com/2021/10/26/%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4/</id>
+    <published>2021-10-26T12:56:05.000Z</published>
+    <updated>2021-10-26T12:59:41.388Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;环境准备&quot;&gt;&lt;a href=&quot;#环境准备&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop介绍</title>
+    <link href="http://example.com/2021/10/26/Hadoop%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://example.com/2021/10/26/Hadoop%E4%BB%8B%E7%BB%8D/</id>
+    <published>2021-10-26T12:52:03.000Z</published>
+    <updated>2021-10-26T12:54:43.898Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Hadoop介绍&quot;&gt;&lt;a href=&quot;#Hadoop介绍&quot; class=&quot;headerlink&quot; title=&quot;Hadoop介绍&quot;&gt;&lt;/a&gt;Hadoop介绍&lt;/h1&gt;&lt;p&gt;Apache</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    
+    <category term="hadoop" scheme="http://example.com/tags/hadoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hadoop-note1</title>
+    <link href="http://example.com/2021/10/26/hadoop-note1/"/>
+    <id>http://example.com/2021/10/26/hadoop-note1/</id>
+    <published>2021-10-26T12:48:24.000Z</published>
+    <updated>2021-10-26T12:51:01.346Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;环境准备&quot;&gt;&lt;a href=&quot;#环境准备&quot; class=&quot;headerlink&quot; title=&quot;环境准备&quot;&gt;&lt;/a&gt;环境准备&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;虚拟机&lt;/li&gt;
+&lt;li&gt;CentOS7 -</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    
+    <category term="hadoop" scheme="http://example.com/tags/hadoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JVM模型和GC算法</title>
+    <link href="http://example.com/2021/10/26/JVM%E6%A8%A1%E5%9E%8B%E5%92%8CGC%E7%AE%97%E6%B3%95/"/>
+    <id>http://example.com/2021/10/26/JVM%E6%A8%A1%E5%9E%8B%E5%92%8CGC%E7%AE%97%E6%B3%95/</id>
+    <published>2021-10-26T12:45:54.000Z</published>
+    <updated>2021-10-26T12:46:20.656Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;JVM模型和GC算法&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;jvm8.x和之前版本有和区别!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;内存 - 运行时数据区域[堆,虚拟机栈,本地方法栈,方法区,程序计数器]&lt;/li&gt;
+&lt;li&gt;线程隔离的 -</summary>
+        
+      
+    
+    
+    
+    <category term="JVM" scheme="http://example.com/categories/JVM/"/>
+    
+    
+    <category term="JVM" scheme="http://example.com/tags/JVM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis进阶篇</title>
+    <link href="http://example.com/2021/10/26/Redis%E8%BF%9B%E9%98%B6%E7%AF%87/"/>
+    <id>http://example.com/2021/10/26/Redis%E8%BF%9B%E9%98%B6%E7%AF%87/</id>
+    <published>2021-10-26T12:39:57.000Z</published>
+    <updated>2021-10-26T12:43:10.617Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Redis进阶篇&quot;&gt;&lt;a href=&quot;#Redis进阶篇&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Redis" scheme="http://example.com/categories/Redis/"/>
+    
+    
+    <category term="Redis" scheme="http://example.com/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>springcloud-gateway</title>
+    <link href="http://example.com/2021/10/26/springcloud-gateway/"/>
+    <id>http://example.com/2021/10/26/springcloud-gateway/</id>
+    <published>2021-10-26T12:32:39.000Z</published>
+    <updated>2021-10-26T12:37:18.408Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;路由网关Gateway概念-课后通读&quot;&gt;&lt;a href=&quot;#路由网关Gateway概念-课后通读&quot; class=&quot;headerlink&quot; title=&quot;路由网关Gateway概念 - 课后通读&quot;&gt;&lt;/a&gt;路由网关Gateway概念 -</summary>
+        
+      
+    
+    
+    
+    <category term="spring" scheme="http://example.com/categories/spring/"/>
+    
+    
+    <category term="spring" scheme="http://example.com/tags/spring/"/>
+    
+  </entry>
+  
+</feed>

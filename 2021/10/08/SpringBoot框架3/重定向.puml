@@ -1,0 +1,12 @@
+@startuml
+客户端 -> f1: http://localhost:8081/boot/day01/f1
+
+客户端 <-- f1:将http://localhost:8081/boot/day01/to1响应给了客户端
+|||
+客户端 -> to1:http://localhost:8081/boot/day01/to1
+
+to1 -> index.jsp:转发
+
+客户端 <-- index.jsp:响应给客户端
+
+@enduml

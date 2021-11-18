@@ -1,0 +1,1905 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="SpringBoot+Redis+RabbitMq专题应用场景-秒杀业务, 码农耕地人">
+    <meta name="description" content="码农耕地人">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>SpringBoot+Redis+RabbitMq专题应用场景-秒杀业务 | 码农耕地人</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="码农耕地人" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+<!-- 雪花特效 -->
+
+
+<script type="text/javascript" src="/libs/others/sakura.js"></script>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">码农耕地人</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">码农耕地人</div>
+        <div class="logo-desc">
+            
+            码农耕地人
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">SpringBoot+Redis+RabbitMq专题应用场景-秒杀业务</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255, 0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+        opacity: 0.7;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        /* -    padding-bottom: 30px; */
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%A7%92%E6%9D%80/">
+                                <span class="chip bg-color">秒杀</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Redis/" class="post-category">
+                                Redis
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-10-09
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    17 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="SpringBoot-Redis-RabbitMq专题应用场景-秒杀业务"><a href="#SpringBoot-Redis-RabbitMq专题应用场景-秒杀业务" class="headerlink" title="SpringBoot+Redis+RabbitMq专题应用场景 - 秒杀业务"></a>SpringBoot+Redis+RabbitMq专题应用场景 - 秒杀业务</h1><h2 id="问题域"><a href="#问题域" class="headerlink" title="问题域"></a>问题域</h2><ul>
+<li>超卖问题 - redis单线程的模型</li>
+<li>重复抢购问题.</li>
+<li>秒杀 - 结算付款 - “削峰” - rabbitMQ</li>
+</ul>
+<h2 id="技术点"><a href="#技术点" class="headerlink" title="技术点"></a>技术点</h2><ul>
+<li>SpringBoot任务调度[定时器]</li>
+<li>RedisTemplate的API</li>
+<li><em><strong>RabbitMQ[消息队列]</strong></em></li>
+</ul>
+<h2 id="秒杀流程图"><a href="#秒杀流程图" class="headerlink" title="秒杀流程图"></a>秒杀流程图</h2><p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/seckill.png"> </p>
+<h2 id="rabbitmq-流量削峰"><a href="#rabbitmq-流量削峰" class="headerlink" title="rabbitmq - 流量削峰"></a>rabbitmq - 流量削峰</h2><p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/rbm.png"> </p>
+<h1 id="核心表介绍"><a href="#核心表介绍" class="headerlink" title="核心表介绍"></a>核心表介绍</h1><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">table</span> web_seckill<span class="token punctuation">;</span>
+<span class="token keyword">drop</span> <span class="token keyword">table</span> web_order<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">-- 订单表</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> web_order<span class="token punctuation">(</span>
+    id          <span class="token keyword">int</span> <span class="token keyword">auto_increment</span> <span class="token keyword">comment</span> <span class="token string">'主键'</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">,</span>
+    orderNo     <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>           <span class="token boolean">null</span> <span class="token keyword">comment</span> <span class="token string">'订单编号'</span><span class="token punctuation">,</span>
+    uName       <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">)</span>            <span class="token boolean">null</span> <span class="token keyword">comment</span> <span class="token string">'用户名'</span><span class="token punctuation">,</span>
+    orderStatus <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token string">'0'</span> <span class="token boolean">null</span> <span class="token keyword">comment</span> <span class="token string">'0已经创建 1未支付  2已经支付  3已经收货  4已经评价'</span><span class="token punctuation">,</span>
+    secId       <span class="token keyword">bigint</span>                 <span class="token boolean">null</span> <span class="token keyword">comment</span> <span class="token string">'秒杀ID'</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">-- 秒杀表 - 当有秒杀活动的时候,一定是要创建秒杀表,存放秒杀信息.</span>
+<span class="token comment" spellcheck="true">-- 核心字段status</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> web_seckill<span class="token punctuation">(</span>
+    id           <span class="token keyword">bigint</span> <span class="token keyword">auto_increment</span> <span class="token keyword">comment</span> <span class="token string">'秒杀主键'</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">,</span>
+    productId    <span class="token keyword">bigint</span>                 <span class="token boolean">null</span> <span class="token keyword">comment</span> <span class="token string">'商品id'</span><span class="token punctuation">,</span>
+    num          <span class="token keyword">int</span>                    <span class="token boolean">null</span> <span class="token keyword">comment</span> <span class="token string">'秒杀名额'</span><span class="token punctuation">,</span>
+    seckillPrice <span class="token keyword">float</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>           <span class="token boolean">null</span> <span class="token keyword">comment</span> <span class="token string">'秒杀价'</span><span class="token punctuation">,</span>
+    startTime    <span class="token keyword">datetime</span>               <span class="token boolean">null</span> <span class="token keyword">comment</span> <span class="token string">'开始时间'</span><span class="token punctuation">,</span>
+    endTime      <span class="token keyword">datetime</span>               <span class="token boolean">null</span> <span class="token keyword">comment</span> <span class="token string">'结束时间'</span><span class="token punctuation">,</span>
+    <span class="token keyword">status</span>       <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token string">'0'</span> <span class="token boolean">null</span> <span class="token keyword">comment</span> <span class="token string">'0未开始，1已开始，2已经结束'</span><span class="token punctuation">,</span>
+    href         <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span>           <span class="token boolean">null</span> <span class="token keyword">comment</span> <span class="token string">'秒杀详情页'</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">-- 模拟数据</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> web_seckill <span class="token punctuation">(</span>id<span class="token punctuation">,</span> productId<span class="token punctuation">,</span> num<span class="token punctuation">,</span> seckillPrice<span class="token punctuation">,</span> startTime<span class="token punctuation">,</span> endTime<span class="token punctuation">,</span> <span class="token keyword">status</span><span class="token punctuation">,</span> href<span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">569.9</span><span class="token punctuation">,</span> <span class="token string">'2021-10-09 14:00:50'</span><span class="token punctuation">,</span> <span class="token string">'2021-10-09 16:55:10'</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">,</span> <span class="token string">'88081.html'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> web_seckill <span class="token punctuation">(</span>id<span class="token punctuation">,</span> productId<span class="token punctuation">,</span> num<span class="token punctuation">,</span> seckillPrice<span class="token punctuation">,</span> startTime<span class="token punctuation">,</span> endTime<span class="token punctuation">,</span> <span class="token keyword">status</span><span class="token punctuation">,</span> href<span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'2021-10-09 14:00:50'</span><span class="token punctuation">,</span> <span class="token string">'2021-10-09 16:55:10'</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">,</span> <span class="token string">'88082.html'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="RabbitMQ介绍和使用"><a href="#RabbitMQ介绍和使用" class="headerlink" title="RabbitMQ介绍和使用"></a>RabbitMQ介绍和使用</h1><h2 id="介绍-消息队列中间件"><a href="#介绍-消息队列中间件" class="headerlink" title="介绍 - 消息队列中间件"></a>介绍 - 消息队列中间件</h2><blockquote>
+<p>RabbitMQ 是一个由 Erlang 语言开发的 AMQP 的开源实现。</p>
+</blockquote>
+<blockquote>
+<p>消息队列中间件是分布式系统中重要的组件，<em><strong>主要解决应用耦合[降低各个服务之间的耦合性]，异步消息，流量削锋,分布式事务等问题实现高性能，高可用，可伸缩和最终一致性</strong></em>[架构]</p>
+</blockquote>
+<blockquote>
+<p>使用较多的消息队列有ActiveMQ，RabbitMQ，ZeroMQ，Kafka，MetaMQ，RocketMQ。其使用场景为：异步处理，应用解耦，流量削锋和消息通讯四个场景。 </p>
+</blockquote>
+<h2 id="下载和安装"><a href="#下载和安装" class="headerlink" title="下载和安装"></a>下载和安装</h2><blockquote>
+<ol>
+<li>Erlang - <a target="_blank" rel="noopener" href="http://www.erlang.org/downloads">http://www.erlang.org/downloads</a></li>
+<li>RabbitMQ - <a target="_blank" rel="noopener" href="https://github.com/rabbitmq/rabbitmq-server/releases">https://github.com/rabbitmq/rabbitmq-server/releases</a></li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>注意一下两者的版本,需要相互兼容.否则安装运行失败!</li>
+<li>默认的端口号:15672</li>
+<li>浏览器输入localhost:15672</li>
+<li>默认的账号和密码都是guest</li>
+</ol>
+</blockquote>
+<h2 id="SpringBoot整合rabbitmq"><a href="#SpringBoot整合rabbitmq" class="headerlink" title="SpringBoot整合rabbitmq"></a>SpringBoot整合rabbitmq</h2><blockquote>
+<ol>
+<li><p>导入依赖</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--        rabbitmq--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-amqp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>application-dev.yml</p>
+<pre class="line-numbers language-yml"><code class="language-yml">spring:
+    rabbitmq:
+    host: localhost
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/rbm-01.png"> </p>
+<h2 id="主要概念"><a href="#主要概念" class="headerlink" title="主要概念"></a>主要概念</h2><ol>
+<li><p><strong>RabbitMQ Server</strong>： 也叫broker server，它是一种传输服务。 他的角色就是维护一条从Producer到Consumer的路线，保证数据能够按照指定的方式进行传输。</p>
+<p>Producer： 消息生产者，如图A、B、C，数据的发送方。消息生产者连接<strong>RabbitMQ</strong>服务器然后将消息投递到Exchange。</p>
+</li>
+<li><p><strong>Consumer</strong>：消息消费者，如图1、2、3，数据的接收方。消息消费者订阅队列，RabbitMQ将Queue中的消息发送到消息消费者。</p>
+</li>
+<li><p><strong>Exchange</strong>：生产者将消息发送到Exchange（交换器），由Exchange将消息路由到一个或多个Queue中（或者丢弃）。Exchange并不存储消息。RabbitMQ中的Exchange有<strong>direct、fanout、topic、headers</strong>四种类型，每种类型对应不同的路由规则。</p>
+</li>
+<li><p><strong>Queue</strong>：（队列）是RabbitMQ的内部对象，<strong>用于存储消息</strong>。<strong>消息消费者</strong>就是通过<strong>订阅队列来获取消息</strong>的，RabbitMQ中的消息都只能存储在Queue中，生产者生产消息并最终投递到Queue中，消费者可以从Queue中获取消息并消费。多个消费者可以订阅同一个Queue，这时Queue中的消息会被平均分摊给多个消费者进行处理，而不是每个消费者都收到所有的消息并处理。</p>
+</li>
+<li><p><strong>RoutingKey</strong>：生产者在将消息发送给Exchange的时候，一般会指定一个routing key，来指定这个消息的路由规则，而这个routing key需要与Exchange Type及binding key联合使用才能最终生效。在Exchange Type与binding key固定的情况下（在正常使用时一般这些内容都是固定配置好的），我们的生产者就可以在发送消息给Exchange时，通过指定routing key来决定消息流向哪里。RabbitMQ为routing key设定的长度限制为255bytes，</p>
+</li>
+<li><p><strong>Connection</strong>： （连接）：Producer和Consumer都是通过TCP连接到RabbitMQ Server的。以后我们可以看到，程序的起始处就是建立这个TCP连接。</p>
+</li>
+<li><p><strong>Channels</strong>： （信道）：它建立在上述的TCP连接中。数据流动都是在Channel中进行的。也就是说，一般情况是程序起始建立TCP连接，第二步就是建立这个Channel。</p>
+</li>
+<li><p><strong>VirtualHost</strong>：权限控制的基本单位，一个VirtualHost里面有若干Exchange和MessageQueue，以及指定被哪些user使用.</p>
+</li>
+</ol>
+<h2 id="RabbitMQ三种模式"><a href="#RabbitMQ三种模式" class="headerlink" title="RabbitMQ三种模式"></a>RabbitMQ三种模式</h2><h3 id="1-直接模式"><a href="#1-直接模式" class="headerlink" title="1. 直接模式"></a>1. 直接模式</h3><p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/direct.png"> </p>
+<blockquote>
+<p>我们需要将消息发给唯一一个节点时使用这种模式，这是最简单的一种形式。</p>
+<p>任何发送到Direct Exchange的消息都会被转发到RouteKey中指定的Queue。</p>
+<p>一般情况可以使用rabbitMQ自带的Exchange：””(该Exchange的名字为空字符串，下文称其为default Exchange)。</p>
+<p><em><strong>这种模式下不需要将Exchange进行任何绑定(binding)操作</strong></em><br>消息传递时需要一个<strong>“RouteKey”</strong>，可以简单的理解为要<strong>发送到的队列名字。</strong><br>如果vhost中不存在RouteKey中指定的队列名，则该消息会被抛弃。</p>
+</blockquote>
+<h4 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h4><blockquote>
+<ol>
+<li><p>新建一个队列 - j03s_direct</p>
+<p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/rq1.png"> </p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li><p>发送方</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>rabbitmq<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>jupiter<span class="token punctuation">.</span>api<span class="token punctuation">.</span>Test<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>rabbit<span class="token punctuation">.</span>core<span class="token punctuation">.</span>RabbitTemplate<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Autowired<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>test<span class="token punctuation">.</span>context<span class="token punctuation">.</span>SpringBootTest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>mapper<span class="token punctuation">.</span>UsersMapper<span class="token punctuation">;</span>
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>model<span class="token punctuation">.</span>entity<span class="token punctuation">.</span>Users<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示:
+ *
+ * @author: success
+ * @date: 2021/10/9 9:24 上午
+ */</span>
+<span class="token annotation punctuation">@SpringBootTest</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestRabbitMq</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RabbitTemplate rabbitTemplate<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> UsersMapper usersMapper<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 直接模式 - 模拟的是生产者
+     */</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDirect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Users u <span class="token operator">=</span> usersMapper<span class="token punctuation">.</span><span class="token function">findByEmail</span><span class="token punctuation">(</span><span class="token string">"849962874@qq.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//秒杀 - 从redis中删除一条数据,需要把删除的数据保存到rabbitmq中.</span>
+        <span class="token comment" spellcheck="true">//rabbitTemplate.convertAndSend("j03s_direct","我直接一个直接模式!");</span>
+        rabbitTemplate<span class="token punctuation">.</span><span class="token function">convertAndSend</span><span class="token punctuation">(</span><span class="token string">"j03s_direct"</span><span class="token punctuation">,</span>u<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>接收方</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>handler<span class="token punctuation">;</span>
+   
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>rabbitmq<span class="token punctuation">.</span>client<span class="token punctuation">.</span>Channel<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>rabbit<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>RabbitHandler<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>rabbit<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>RabbitListener<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>support<span class="token punctuation">.</span>AmqpHeaders<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>messaging<span class="token punctuation">.</span>handler<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Headers<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Component<span class="token punctuation">;</span>
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>model<span class="token punctuation">.</span>entity<span class="token punctuation">.</span>Users<span class="token punctuation">;</span>
+   
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Map<span class="token punctuation">;</span>
+   
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 直接模式 1:1 - 只要j03s_direct队列上一旦被生产者发送了消息
+ *
+ * 那么此处将会进行消费
+ *
+ * @author: success
+ * @date: 2021/10/9 9:33 上午
+ */</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token annotation punctuation">@RabbitListener</span><span class="token punctuation">(</span>queues <span class="token operator">=</span> <span class="token string">"j03s_direct"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RabbitMqService</span> <span class="token punctuation">{</span>
+   
+    <span class="token comment" spellcheck="true">/**
+     * 参数需要和发送方发送的参数保持一致即可
+     * @param msg
+     */</span>
+<span class="token comment" spellcheck="true">//    @RabbitHandler</span>
+<span class="token comment" spellcheck="true">//    public void getDirect01(String msg){</span>
+<span class="token comment" spellcheck="true">//        System.out.println("msg01:"+msg);</span>
+<span class="token comment" spellcheck="true">//    }</span>
+   
+<span class="token comment" spellcheck="true">//    </span><span class="token comment" spellcheck="true">/**
+//     * 可以进行删除删除的操作
+//     * @param u
+//     */</span>
+<span class="token comment" spellcheck="true">//    @RabbitHandler</span>
+<span class="token comment" spellcheck="true">//    public void getDirect01(Users u){</span>
+<span class="token comment" spellcheck="true">//        System.out.println("msg01:"+u);</span>
+<span class="token comment" spellcheck="true">//    }</span>
+   
+    <span class="token comment" spellcheck="true">/**
+     * 可以进行删除删除的操作
+     * @param u
+     */</span>
+    <span class="token annotation punctuation">@RabbitHandler</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getDirect01</span><span class="token punctuation">(</span>Users u<span class="token punctuation">,</span> <span class="token annotation punctuation">@Headers</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> header<span class="token punctuation">,</span> Channel channel<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"msg01:"</span><span class="token operator">+</span>u<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+        <span class="token comment" spellcheck="true">//手动删除rabbitmq队列中的数据的.</span>
+        <span class="token keyword">long</span> ack <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span> header<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>AmqpHeaders<span class="token punctuation">.</span>DELIVERY_TAG<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            channel<span class="token punctuation">.</span><span class="token function">basicAck</span><span class="token punctuation">(</span>ack<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li><p>配置一个手动ack - 手动删除rabbitmq队列中的数据</p>
+<pre class="line-numbers language-yml"><code class="language-yml">spring:
+    rabbitmq:
+    localhost: localhost
+    listener:
+      simple:
+        # 手动ack - 手动删除
+        acknowledge-mode: manual
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<h3 id="2-分裂模式"><a href="#2-分裂模式" class="headerlink" title="2. 分裂模式"></a>2. 分裂模式</h3><blockquote>
+<p> 当我们需要将消息一次发给多个队列时，需要使用这种模式。如下图：</p>
+<p> <img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/exchange.png"></p>
+</blockquote>
+<blockquote>
+<p> 任何发送到Fanout Exchange的消息都会被转发到与该Exchange绑定(Binding)的所有Queue上。</p>
+<ol>
+<li>可以理解为路由表的模式</li>
+<li>这种模式不需要RouteKey</li>
+<li>这种模式需要提前将Exchange与Queue进行绑定，一个Exchange可以绑定多个Queue，一个Queue可以同多个Exchange进行绑定。</li>
+<li>如果接受到消息的Exchange没有与任何Queue绑定，则消息会被抛弃.</li>
+</ol>
+</blockquote>
+<h4 id="具体操作-1"><a href="#具体操作-1" class="headerlink" title="具体操作"></a>具体操作</h4><blockquote>
+<ol>
+<li><p>新建一个Exchange - 交换器并且要设置它的type - fanout</p>
+<p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/fanout.png"> </p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li><p>一个交换器是需要和队列进行绑定的 - routingKey - “”</p>
+<p>2-1. 新建了俩个队列e1,e2</p>
+<p>2-2. 交换器和队列e1,e2进行绑定操作</p>
+<p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/bings.png"> </p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li><p>发送方</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>rabbitmq<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>jupiter<span class="token punctuation">.</span>api<span class="token punctuation">.</span>Test<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>rabbit<span class="token punctuation">.</span>core<span class="token punctuation">.</span>RabbitTemplate<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Autowired<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>test<span class="token punctuation">.</span>context<span class="token punctuation">.</span>SpringBootTest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>mapper<span class="token punctuation">.</span>UsersMapper<span class="token punctuation">;</span>
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>model<span class="token punctuation">.</span>entity<span class="token punctuation">.</span>Users<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示:
+ *
+ * @author: success
+ * @date: 2021/10/9 9:24 上午
+ */</span>
+<span class="token annotation punctuation">@SpringBootTest</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestRabbitMq</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RabbitTemplate rabbitTemplate<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> UsersMapper usersMapper<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 直接模式 - 模拟的是生产者
+     */</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDirect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Users u <span class="token operator">=</span> usersMapper<span class="token punctuation">.</span><span class="token function">findByEmail</span><span class="token punctuation">(</span><span class="token string">"849962874@qq.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//秒杀 - 从redis中删除一条数据,需要把删除的数据保存到rabbitmq中.</span>
+        <span class="token comment" spellcheck="true">//rabbitTemplate.convertAndSend("j03s_direct","我直接一个直接模式!");</span>
+        rabbitTemplate<span class="token punctuation">.</span><span class="token function">convertAndSend</span><span class="token punctuation">(</span><span class="token string">"j03s_direct"</span><span class="token punctuation">,</span>u<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 分裂模式 - 发送方把数据发送交换器,由交换器把数据路由[转发]到各个队列上.
+     * 交换器是不会存储消息[数据]的
+     */</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testFanout</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        rabbitTemplate<span class="token punctuation">.</span><span class="token function">convertAndSend</span><span class="token punctuation">(</span><span class="token string">"j03s_fanout"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token string">"我是分裂模式!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>接收方</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>handler<span class="token punctuation">;</span>
+   
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>rabbitmq<span class="token punctuation">.</span>client<span class="token punctuation">.</span>Channel<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>rabbit<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>RabbitHandler<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>rabbit<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>RabbitListener<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>support<span class="token punctuation">.</span>AmqpHeaders<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>messaging<span class="token punctuation">.</span>handler<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Headers<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Component<span class="token punctuation">;</span>
+   
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Map<span class="token punctuation">;</span>
+   
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 分裂模式 - 一个生产者具有多个消费者
+ *
+ * @author: success
+ * @date: 2021/10/9 10:25 上午
+ */</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RabbitMQFanout</span> <span class="token punctuation">{</span>
+   
+    <span class="token annotation punctuation">@RabbitListener</span><span class="token punctuation">(</span>queues <span class="token operator">=</span> <span class="token string">"e1"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@RabbitHandler</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getE1</span><span class="token punctuation">(</span>String msg<span class="token punctuation">,</span> <span class="token annotation punctuation">@Headers</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> header<span class="token punctuation">,</span> Channel channel<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"msg01-"</span><span class="token operator">+</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+        <span class="token comment" spellcheck="true">//手动删除rabbitmq队列中的数据的.</span>
+        <span class="token keyword">long</span> ack <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span> header<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>AmqpHeaders<span class="token punctuation">.</span>DELIVERY_TAG<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            channel<span class="token punctuation">.</span><span class="token function">basicAck</span><span class="token punctuation">(</span>ack<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+   
+    <span class="token annotation punctuation">@RabbitListener</span><span class="token punctuation">(</span>queues <span class="token operator">=</span> <span class="token string">"e2"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@RabbitHandler</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getE2</span><span class="token punctuation">(</span>String msg<span class="token punctuation">,</span> <span class="token annotation punctuation">@Headers</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> header<span class="token punctuation">,</span> Channel channel<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"msg02-"</span><span class="token operator">+</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+        <span class="token comment" spellcheck="true">//手动删除rabbitmq队列中的数据的.</span>
+        <span class="token keyword">long</span> ack <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span> header<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>AmqpHeaders<span class="token punctuation">.</span>DELIVERY_TAG<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            channel<span class="token punctuation">.</span><span class="token function">basicAck</span><span class="token punctuation">(</span>ack<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<h3 id="3-主题模式"><a href="#3-主题模式" class="headerlink" title="3. 主题模式"></a>3. 主题模式</h3><blockquote>
+<p>任何发送到Topic Exchange的消息都会被转发到所有关心RouteKey中指定话题的Queue上</p>
+</blockquote>
+<p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/topic_exchange.png"> </p>
+<hr>
+<p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/topic.png"> </p>
+<blockquote>
+<p><em><em>如上图所示此类交换器使得来自不同的源头的消息可以到达一个对列，其实说的更明白一点就是模糊匹配的意思，例如：上图中红色对列的routekey为usa.#，#代表匹配任意字符，但是要想消息能到达此对列，usa.必须匹配后面的#好可以随意。图中usa.newsusa.weather,都能找到红色队列，符号 # 匹配一个或多个词，符号 * 匹配不多不少一个词。因此 usa.# 能够匹配到 usa.news.XXX ，但是 usa.</em> 只会匹配到 usa.XXX 。</em>*</p>
+<p>注：<br>交换器说到底是一个名称与队列绑定的列表。当消息发布到交换器时，实际上是由你所连接的信道，将消息路由键同交换器上绑定的列表进行比较，最后路由消息。任何发送到Topic Exchange的消息都会被转发到所有关心RouteKey中指定话题的Queue上</p>
+<p>这种模式较为复杂，简单来说，就是每个队列都有其关心的主题，所有的消息都带有一个“标题”(RouteKey)，Exchange会将消息转发到所有关注主题能与RouteKey模糊匹配的队列。<br>这种模式需要RouteKey，也许要提前绑定Exchange与Queue。<br>在进行绑定时，要提供一个该队列关心的主题，如“#.log.#”表示该队列关心所有涉及log的消息(一个RouteKey为”MQ.log.error”的消息会被转发到该队列)。<br>“#”表示0个或若干个关键字，“”表示一个关键字。如“log.”能与“log.warn”匹配，无法与“log.warn.timeout”匹配；但是“log.#”能与上述两者匹配。<br>同样，如果Exchange没有发现能够与RouteKey匹配的Queue，则会抛弃此消息</p>
+</blockquote>
+<h4 id="具体操作-2"><a href="#具体操作-2" class="headerlink" title="具体操作"></a>具体操作</h4><blockquote>
+<ol>
+<li><p>新建一个交换器j03s_topic - type设置成topic</p>
+</li>
+<li><p>新建俩个队列top1,top2,top3,但是需要设置routingkey - 满足上面的正则 </p>
+</li>
+<li><p>绑定</p>
+<p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/topic1.png"> </p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>发送方</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>rabbitmq<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>jupiter<span class="token punctuation">.</span>api<span class="token punctuation">.</span>Test<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>rabbit<span class="token punctuation">.</span>core<span class="token punctuation">.</span>RabbitTemplate<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Autowired<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>test<span class="token punctuation">.</span>context<span class="token punctuation">.</span>SpringBootTest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>mapper<span class="token punctuation">.</span>UsersMapper<span class="token punctuation">;</span>
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>model<span class="token punctuation">.</span>entity<span class="token punctuation">.</span>Users<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示:
+ *
+ * @author: success
+ * @date: 2021/10/9 9:24 上午
+ */</span>
+<span class="token annotation punctuation">@SpringBootTest</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestRabbitMq</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RabbitTemplate rabbitTemplate<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> UsersMapper usersMapper<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 直接模式 - 模拟的是生产者
+     */</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDirect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Users u <span class="token operator">=</span> usersMapper<span class="token punctuation">.</span><span class="token function">findByEmail</span><span class="token punctuation">(</span><span class="token string">"849962874@qq.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//秒杀 - 从redis中删除一条数据,需要把删除的数据保存到rabbitmq中.</span>
+        <span class="token comment" spellcheck="true">//rabbitTemplate.convertAndSend("j03s_direct","我直接一个直接模式!");</span>
+        rabbitTemplate<span class="token punctuation">.</span><span class="token function">convertAndSend</span><span class="token punctuation">(</span><span class="token string">"j03s_direct"</span><span class="token punctuation">,</span>u<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 分裂模式 - 发送方把数据发送交换器,由交换器把数据路由[转发]到各个队列上.
+     * 交换器是不会存储消息[数据]的
+     */</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testFanout</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        rabbitTemplate<span class="token punctuation">.</span><span class="token function">convertAndSend</span><span class="token punctuation">(</span><span class="token string">"j03s_fanout"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token string">"我是分裂模式!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token comment" spellcheck="true">/**
+     * 主题模式 - 通用,灵活性更强.
+     */</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testTopic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        rabbitTemplate<span class="token punctuation">.</span><span class="token function">convertAndSend</span><span class="token punctuation">(</span><span class="token string">"j03s_topic"</span><span class="token punctuation">,</span><span class="token string">"good.success.log"</span><span class="token punctuation">,</span><span class="token string">"我是主题模式01!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接收方 - 和分裂模式的代码一样</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>handler<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>rabbitmq<span class="token punctuation">.</span>client<span class="token punctuation">.</span>Channel<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>rabbit<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>RabbitHandler<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>rabbit<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>RabbitListener<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>support<span class="token punctuation">.</span>AmqpHeaders<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>messaging<span class="token punctuation">.</span>handler<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Headers<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Component<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Map<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 主题模式
+ *
+ * @author: success
+ * @date: 2021/10/9 10:25 上午
+ */</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RabbitMQTopic</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@RabbitListener</span><span class="token punctuation">(</span>queues <span class="token operator">=</span> <span class="token string">"top1"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@RabbitHandler</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getE1</span><span class="token punctuation">(</span>String msg<span class="token punctuation">,</span> <span class="token annotation punctuation">@Headers</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> header<span class="token punctuation">,</span> Channel channel<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"msg01-"</span><span class="token operator">+</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//手动删除rabbitmq队列中的数据的.</span>
+        <span class="token keyword">long</span> ack <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span> header<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>AmqpHeaders<span class="token punctuation">.</span>DELIVERY_TAG<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            channel<span class="token punctuation">.</span><span class="token function">basicAck</span><span class="token punctuation">(</span>ack<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@RabbitListener</span><span class="token punctuation">(</span>queues <span class="token operator">=</span> <span class="token string">"top2"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@RabbitHandler</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getTop2</span><span class="token punctuation">(</span>String msg<span class="token punctuation">,</span> <span class="token annotation punctuation">@Headers</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> header<span class="token punctuation">,</span> Channel channel<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"msg02-"</span><span class="token operator">+</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//手动删除rabbitmq队列中的数据的.</span>
+        <span class="token keyword">long</span> ack <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span> header<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>AmqpHeaders<span class="token punctuation">.</span>DELIVERY_TAG<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            channel<span class="token punctuation">.</span><span class="token function">basicAck</span><span class="token punctuation">(</span>ack<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h1 id="利用Jmeter工具进行压测"><a href="#利用Jmeter工具进行压测" class="headerlink" title="利用Jmeter工具进行压测"></a>利用Jmeter工具进行压测</h1><blockquote>
+<p>压测 - 压力测试 - 测试系统的吞吐量,响应时间,错误率</p>
+</blockquote>
+<blockquote>
+<p>下载以及安装步骤 - <a target="_blank" rel="noopener" href="https://my.oschina.net/niepanLs/blog/3012286">https://my.oschina.net/niepanLs/blog/3012286</a></p>
+</blockquote>
+<h2 id="具体操作-3"><a href="#具体操作-3" class="headerlink" title="具体操作"></a>具体操作</h2><blockquote>
+<ol>
+<li><p>新建线程组</p>
+<p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/jmeter01.png"> </p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li><p>设置线程组的参数</p>
+<p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/jmeter02.png"> </p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li><p>添加聚合报告 - 观察吞吐量,响应时间,请求错误率信息 - 优化</p>
+<p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/jmeter03.png">  </p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li><p>添加取样器 - http请求</p>
+<p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/jmeter04.png"> </p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="5">
+<li><p>http请求设置</p>
+<p>5-1. 模拟users.csv文件 - 存放若干个用户名</p>
+<blockquote>
+<p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/csv.png"> </p>
+</blockquote>
+<p>5-2. csv界面信息的设置</p>
+<blockquote>
+<p><img src="/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/csv02.png"> </p>
+</blockquote>
+<p>5-3. http请求界面的设置信息</p>
+<blockquote>
+<p><img src="SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/http.png"> </p>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+<h1 id="SpringBoot整合Druid"><a href="#SpringBoot整合Druid" class="headerlink" title="SpringBoot整合Druid"></a>SpringBoot整合Druid</h1><blockquote>
+<ol>
+<li><p>导入依赖</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--        druid连接池--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>druid-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.1.10<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>application.yml文件中进行配置</p>
+<pre class="line-numbers language-yml"><code class="language-yml">server:
+  port: 8088
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/j13_test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    druid:
+      # 下面为连接池的补充设置，应用到上面所有数据源中
+      # 初始化大小，最小，最大
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      # 配置获取连接等待超时的时间
+      max-wait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      pool-prepared-statements: true
+      #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      max-pool-prepared-statement-per-connection-size: 20
+      filters: stat,wall
+      use-global-data-source-stat: true
+      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+      stat-view-servlet:
+        login-username: admin
+        login-password: admin
+  rabbitmq:
+    host: localhost
+    listener:
+      simple:
+#        设置成手动删除方式
+        acknowledge-mode: manual
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+  redis:
+    host: localhost
+    port: 6379
+    password: success
+    database: 10
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>配置连接池过滤器</p>
+<p>主程序上需要加入@ServletComponentScan//开启servlet注解使用</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>filter<span class="token punctuation">;</span>
+      
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>support<span class="token punctuation">.</span>http<span class="token punctuation">.</span>WebStatFilter<span class="token punctuation">;</span>
+      
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebFilter<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebInitParam<span class="token punctuation">;</span>
+      
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 连接池过滤器
+ *
+ * @author: success
+ * @date: 2021/5/13 2:40 下午
+ */</span>
+<span class="token annotation punctuation">@WebFilter</span><span class="token punctuation">(</span>filterName<span class="token operator">=</span><span class="token string">"druidWebStatFilter"</span><span class="token punctuation">,</span>urlPatterns<span class="token operator">=</span><span class="token string">"/*"</span><span class="token punctuation">,</span>
+        initParams<span class="token operator">=</span><span class="token punctuation">{</span>
+                <span class="token annotation punctuation">@WebInitParam</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"exclusions"</span><span class="token punctuation">,</span>value<span class="token operator">=</span><span class="token string">"*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//忽略资源</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DruidFilter</span> <span class="token keyword">extends</span> <span class="token class-name">WebStatFilter</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li><p>查看Druid界面</p>
+<p><a target="_blank" rel="noopener" href="http://localhost:8088/druid/">http://localhost:8088/druid/</a></p>
+</li>
+</ol>
+</blockquote>
+<h1 id="SpringBoot任务调度器"><a href="#SpringBoot任务调度器" class="headerlink" title="SpringBoot任务调度器"></a>SpringBoot任务调度器</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://cron.qqe2.com/">https://cron.qqe2.com/</a> </p>
+<p>cron在线表达式生成</p>
+</blockquote>
+<blockquote>
+<p>用来定时执行任务的</p>
+<ol>
+<li><p>在主程序上进行配置</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@EnableScheduling</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SpringbootJ03sApplication</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>SpringbootJ03sApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>具体的任务</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>task<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>scheduling<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Scheduled<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Component<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: SpringBoot定时任务调度器
+ *
+ * @author: success
+ * @date: 2021/10/9 1:44 下午
+ */</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloTask</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 每间隔2秒执行一次
+     */</span>
+    <span class="token annotation punctuation">@Scheduled</span><span class="token punctuation">(</span>cron <span class="token operator">=</span> <span class="token string">"0/2 * * * * *"</span> <span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testTask01</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"task01..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">码农耕地人</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/">http://example.com/2021/10/09/SpringBoot-Redis-RabbitMq%E4%B8%93%E9%A2%98%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">码农耕地人</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%A7%92%E6%9D%80/">
+                                    <span class="chip bg-color">秒杀</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/10/09/java%E5%9F%BA%E7%A1%80%E4%B8%8A/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="java基础上">
+                        
+                        <span class="card-title">java基础上</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B7%A8%E4%BA%BA%E7%9A%84%E8%82%A9%E8%86%80/" class="post-category">
+                                    巨人的肩膀
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/10/09/Redis%E5%85%A5%E9%97%A81/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Redis总结">
+                        
+                        <span class="card-title">Redis总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B7%A8%E4%BA%BA%E7%9A%84%E8%82%A9%E8%86%80/" class="post-category">
+                                    巨人的肩膀
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Redis/">
+                        <span class="chip bg-color">Redis</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录
+            </div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fas fa-list-ul"></i>
+        </a>
+    </div>
+    
+
+        <script src="/libs/tocbot/tocbot.min.js"></script>
+        <script>
+            $(function () {
+                tocbot.init({
+                    tocSelector: '#toc-content',
+                    contentSelector: '#articleContent',
+                    headingsOffset: -($(window).height() * 0.4 - 45),
+                    collapseDepth: Number('0'),
+                    headingSelector: 'h2, h3, h4'
+                });
+
+                // modify the toc link href to support Chinese.
+                let i = 0;
+                let tocHeading = 'toc-heading-';
+                $('#toc-content a').each(function () {
+                    $(this).attr('href', '#' + tocHeading + (++i));
+                });
+
+                // modify the heading title id to support Chinese.
+                i = 0;
+                $('#articleContent').children('h2, h3, h4').each(function () {
+                    $(this).attr('id', tocHeading + (++i));
+                });
+
+                // Set scroll toc fixed.
+                let tocHeight = parseInt($(window).height() * 0.4 - 64);
+                let $tocWidget = $('.toc-widget');
+                $(window).scroll(function () {
+                    let scroll = $(window).scrollTop();
+                    /* add post toc fixed. */
+                    if (scroll > tocHeight) {
+                        $tocWidget.addClass('toc-fixed');
+                    } else {
+                        $tocWidget.removeClass('toc-fixed');
+                    }
+                });
+
+        
+                    /* 修复文章卡片 div 的宽度. */
+                    let fixPostCardWidth = function (srcId, targetId) {
+                        let srcDiv = $('#' + srcId);
+                        if (srcDiv.length === 0) {
+                            return;
+                        }
+
+                        let w = srcDiv.width();
+                        if (w >= 450) {
+                            w = w + 21;
+                        } else if (w >= 350 && w < 450) {
+                            w = w + 18;
+                        } else if (w >= 300 && w < 350) {
+                            w = w + 16;
+                        } else {
+                            w = w + 14;
+                        }
+                        $('#' + targetId).width(w);
+                    };
+
+                    // 切换TOC目录展开收缩的相关操作.
+                    const expandedClass = 'expanded';
+                    let $tocAside = $('#toc-aside');
+                    let $mainContent = $('#main-content');
+                    $('#floating-toc-btn .btn-floating').click(function () {
+                        if ($tocAside.hasClass(expandedClass)) {
+                            $tocAside.removeClass(expandedClass).hide();
+                            $mainContent.removeClass('l9');
+                        } else {
+                            $tocAside.addClass(expandedClass).show();
+                            $mainContent.addClass('l9');
+                        }
+                        fixPostCardWidth('artDetail', 'prenext-posts');
+                    });
+        
+    });
+        </script>
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">码农耕地人</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">336.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zhugefeng/zhugefeng.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:156035828@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=156035828" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 156035828" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/xxx" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/xxx" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"left"},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+
+</html>

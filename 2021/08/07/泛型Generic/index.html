@@ -1,0 +1,2183 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="泛型Generic, 码农耕地人">
+    <meta name="description" content="码农耕地人">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>泛型Generic | 码农耕地人</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="码农耕地人" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+<!-- 雪花特效 -->
+
+
+<script type="text/javascript" src="/libs/others/sakura.js"></script>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">码农耕地人</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">码农耕地人</div>
+        <div class="logo-desc">
+            
+            码农耕地人
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">泛型Generic</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255, 0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+        opacity: 0.7;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        /* -    padding-bottom: 30px; */
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%B3%9B%E5%9E%8B/">
+                                <span class="chip bg-color">泛型</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/java%E5%85%A5%E9%97%A8/" class="post-category">
+                                java入门
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-08-07
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    23 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="泛型Generic"><a href="#泛型Generic" class="headerlink" title="泛型Generic"></a>泛型Generic</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
+<ol>
+<li>Java在1.5之后加入了泛型的概念。泛型，即“<strong>参数化类型</strong>”。</li>
+<li>泛型的本质是为了参数化类型(<em><strong>将类型参数化传递</strong></em>)（在不创建新的类型的情况下，通过泛型指定的不同类型来控制形参具体限制的类型）。也就是说在泛型使用过程中，<strong>操作的数据类型被指定为一个参数</strong>，</li>
+<li>这种参数类型可以用在类、接口和方法中，分别被称为<strong>泛型类、泛型接口、泛型方法</strong>。</li>
+<li>泛型只能是对象类型,比如User,Student,内置对象类型比如String,Integer[一定是包装类型]</li>
+</ol>
+</blockquote>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//jdk5.0之前</span>
+List list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//集合中可以添加任意类型的数据</span>
+
+<span class="token comment" spellcheck="true">//jdk5.0开始~jdk7.0之前</span>
+<span class="token comment" spellcheck="true">//类型安全的集合框架</span>
+List<span class="token operator">&lt;</span>Integer<span class="token operator">></span> list <span class="token operator">-</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Integer<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//在编译期间确定了集合中添加的数据的类型,只能是Integer类型.</span>
+
+<span class="token comment" spellcheck="true">//jdk7.0开始</span>
+<span class="token comment" spellcheck="true">//结论:泛型只有编译期间的概念,在运行期间将会被擦除.</span>
+List<span class="token operator">&lt;</span>Integer<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="泛型符号"><a href="#泛型符号" class="headerlink" title="泛型符号"></a>泛型符号</h2><blockquote>
+<ol>
+<li>E 元素</li>
+<li>K,V - 键值对</li>
+<li>N - 数字</li>
+<li>T - 类型</li>
+<li><strong>? - 通配符</strong></li>
+</ol>
+</blockquote>
+<h2 id="为何要有泛型呢"><a href="#为何要有泛型呢" class="headerlink" title="为何要有泛型呢"></a>为何要有泛型呢</h2><blockquote>
+<p>对别一下没有泛型,会导致什么结果.</p>
+<blockquote>
+<ol>
+<li>加入了泛型之后,可以保证代码的<strong>健壮性</strong></li>
+<li>加入了泛型之后,取值的时候,不需要进行强制类型的转换</li>
+<li>加入了泛型之后,代码会变得更加简洁</li>
+</ol>
+</blockquote>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ArrayList<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 泛型的好处
+ *
+ * @author: success
+ * @date: 2021/8/7 9:05 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GenericDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//jdk5.0之前</span>
+        List list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//集合中可以添加任意类型的数据</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//10->java.lang.Integer</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"ok"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//字符串</span>
+
+        <span class="token comment" spellcheck="true">//没有泛型的时候,获取集合中的元素 - 统计的返回类型都是Object类型</span>
+        <span class="token comment" spellcheck="true">//需要进行强制类型的转换.转换的过程中有可能会抛出java.lang.ClassCastException类型转换失败异常</span>
+        <span class="token comment" spellcheck="true">//在类型转换之前,建议先进行类型的判断,使用instanceof关键字</span>
+        String ok <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> list<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>ok<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//jdk7.0开始</span>
+        <span class="token comment" spellcheck="true">//一旦指定了泛型,add方法中的E成了String类型,返回类型也是String类型</span>
+        List<span class="token operator">&lt;</span>String<span class="token operator">></span> strList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"ok"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"java"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//根据下标获取 - 不需要进行类型的强制转换了.自动能够识别出返回类型就是你指定的那个泛型.</span>
+        String result <span class="token operator">=</span> strList<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h2 id="泛型只有编译期间的概念-在运行期间将会被擦除"><a href="#泛型只有编译期间的概念-在运行期间将会被擦除" class="headerlink" title="泛型只有编译期间的概念,在运行期间将会被擦除."></a>泛型只有编译期间的概念,在运行期间将会被擦除.</h2><blockquote>
+<p>结论:泛型是没有多态的</p>
+</blockquote>
+<blockquote>
+<ol>
+<li><p>泛型只有编译期间的概念 - 泛型仅仅是在编译期间是有效的</p>
+<p>在编译期间一旦确定了泛型,那么在编译期间就只能向这个容器中添加对应类型的数据.</p>
+<p>否则编译报错.</p>
+</li>
+<li><p>运行期间将会被擦除 - 泛型是不存在运行时类型的</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">;</span>
+   
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day05<span class="token punctuation">.</span>User<span class="token punctuation">;</span>
+   
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ArrayList<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+   
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 泛型只有编译期间的概念,在运行期间将会被擦除.
+ *
+ * @author: success
+ * @date: 2021/8/7 9:16 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GenericRuntimeDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//多态的语法 - 多态的应用</span>
+        <span class="token comment" spellcheck="true">//面向父类编程/面向接口编程</span>
+        <span class="token comment" spellcheck="true">//编译时类型 对象名 = new 运行时类型();</span>
+        <span class="token comment" spellcheck="true">//父类      对象   = new 子类();</span>
+        <span class="token comment" spellcheck="true">//接口      对象   = new 实现类();</span>
+   
+        <span class="token comment" spellcheck="true">//java.lang.Integer extends java.lang.Number</span>
+        <span class="token comment" spellcheck="true">//java.lang.Long extends java.lang.Number</span>
+        Number n1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Number n2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Long</span><span class="token punctuation">(</span>20L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+        <span class="token comment" spellcheck="true">//jdk5.0~jdk7.0之前</span>
+        List<span class="token operator">&lt;</span>Integer<span class="token operator">></span> list01 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Integer<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//思考 - 编译是错误的</span>
+        <span class="token comment" spellcheck="true">//结论:泛型是没有多态的</span>
+        <span class="token comment" spellcheck="true">//原因:泛型只有编译期间的概念,在运行期间将会被擦除.</span>
+        <span class="token comment" spellcheck="true">//List&lt;Number> numberList = new ArrayList&lt;Integer>();</span>
+        List<span class="token operator">&lt;</span>Long<span class="token operator">></span> list02 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Long<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+        <span class="token comment" spellcheck="true">//获取对象的运行时类型</span>
+        <span class="token comment" spellcheck="true">//忘记了 - java.lang.Object中的toString方法 getClass().getName()+"@"+Integer.toHexString(hashCode());</span>
+        <span class="token comment" spellcheck="true">//Class实例 - 别名:对象的运行时类型</span>
+        Class<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">></span> c1 <span class="token operator">=</span> list01<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Class<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">></span> c2 <span class="token operator">=</span> list02<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c1 <span class="token operator">==</span> c2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+        <span class="token comment" spellcheck="true">//结论:获取运行时类型始终都是ArrayList,和&lt;Integer>和&lt;Long>是无关的</span>
+        <span class="token comment" spellcheck="true">//所以泛型仅仅是在编译期间有效,但是在运行期间是无效的[将会被擦除,将会失效]</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//class java.util.ArrayList</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//class java.util.ArrayList</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<pre><code>       //结论:一个类无论被实例化多少次,它在JVM中的Class对象/实例永远只有1个
+</code></pre>
+<p>   //        User user1 = new User();<br>   //        System.out.println(user1.getClass());//class tech.aistar.day05.User<br>   //<br>   //        User user2 = new User();<br>   //        System.out.println(user2.getClass());//class tech.aistar.day05.User<br>   //<br>   //        System.out.println(user1.getClass() == user2.getClass());//true<br>       }<br>   }</p>
+<pre><code>
+</code></pre>
+</blockquote>
+<h2 id="泛型通配符"><a href="#泛型通配符" class="headerlink" title="泛型通配符"></a>泛型通配符</h2><blockquote>
+<ol>
+<li><p>**? extends T - 只能是T类型或者T类型的子类 **- 指定类型的上限</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 问号的通配符
+ *
+ * @author: success
+ * @date: 2021/8/7 9:45 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">WildCardDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//只能添加添加null</span>
+<span class="token comment" spellcheck="true">//        List&lt;?> list = new ArrayList&lt;>();</span>
+<span class="token comment" spellcheck="true">//        //list.add(10);//error</span>
+<span class="token comment" spellcheck="true">//        //list.add("ok");//error</span>
+<span class="token comment" spellcheck="true">//        list.add(null);//ok</span>
+
+        List<span class="token operator">&lt;</span>Integer<span class="token operator">></span> intList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        intList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        intList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        intList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        List<span class="token operator">&lt;</span>Long<span class="token operator">></span> longList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        longList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>100L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        longList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>200L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        longList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>300L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//能否定义一个方法,能够打印上面俩个集合</span>
+        <span class="token function">printList</span><span class="token punctuation">(</span>intList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"====="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token function">printList</span><span class="token punctuation">(</span>longList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//泛型是不存在多态的.</span>
+    <span class="token comment" spellcheck="true">//假设认为是List&lt;Number> list = new ArrayList&lt;Long>();//error</span>
+    <span class="token comment" spellcheck="true">//Integer和Long都是extends Number</span>
+
+    <span class="token comment" spellcheck="true">//? extends T - 只能是T类型或者T类型的子类 - 指定类型的上限</span>
+    <span class="token comment" spellcheck="true">//? super T - 只能是T类型或者T类型的父类 - 指定类型的下限</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">printList</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Number</span><span class="token operator">></span> list<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//推荐使用集合的迭代器</span>
+        <span class="token comment" spellcheck="true">//获取集合的迭代器对象</span>
+        Iterator<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Number</span><span class="token operator">></span> iter <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>iter<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//Integer,Long -> extends->Number->多态的语法</span>
+            Number result <span class="token operator">=</span> iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>? super T - 只能是T类型或者T类型的父类</strong> - 指定类型的下限</p>
+</li>
+</ol>
+</blockquote>
+<h1 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h1><blockquote>
+<p>定义类的时候,给定一个泛型,真正使用的时候,再确定具体的类型</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 泛型类
+ *
+ * @author: success
+ * @date: 2021/8/7 10:11 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GenericClassDemo</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//定义属性</span>
+    <span class="token keyword">private</span> T type<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">GenericClassDemo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//将类型参数化传递</span>
+    <span class="token keyword">public</span> <span class="token function">GenericClassDemo</span><span class="token punctuation">(</span>T type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>type <span class="token operator">=</span> type<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//泛型方法</span>
+    <span class="token keyword">public</span> T <span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> type<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//将类型参数化传递</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setType</span><span class="token punctuation">(</span>T type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>type <span class="token operator">=</span> type<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//测试泛型类</span>
+        GenericClassDemo<span class="token operator">&lt;</span>String<span class="token operator">></span> c1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GenericClassDemo</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token string">"python"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        c1<span class="token punctuation">.</span><span class="token function">setType</span><span class="token punctuation">(</span><span class="token string">"java"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        String result <span class="token operator">=</span> c1<span class="token punctuation">.</span><span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"result:"</span><span class="token operator">+</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"===华丽丽的分割线==="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        GenericClassDemo<span class="token operator">&lt;</span>Integer<span class="token operator">></span> c2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GenericClassDemo</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c2<span class="token punctuation">.</span><span class="token function">setType</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c2<span class="token punctuation">.</span><span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h1 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h1><blockquote>
+<p>如果泛型加在类上面,对整个类内部的泛型的地方都会有影响</p>
+<p><strong>可能某个类中就那么几个方法需要使用到泛型</strong>,没有必要定义泛型类,只需要<strong>定义泛型方法</strong>即可.</p>
+<p><strong>如果若干个很多个方法都使用到了泛型,有必要定义一个泛型类.</strong></p>
+</blockquote>
+<blockquote>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 泛型方法
+ *
+ * @author: success
+ * @date: 2021/8/7 10:17 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GenericMethodDemo</span> <span class="token punctuation">{</span>
+
+    <span class="token comment" spellcheck="true">//非静态方法 - 无返回类型</span>
+    <span class="token keyword">public</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">void</span> <span class="token function">test01</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"test01..."</span><span class="token operator">+</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//非静态方法 - 带返回类型</span>
+    <span class="token keyword">public</span> <span class="token operator">&lt;</span>E<span class="token operator">></span> E <span class="token function">test02</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"e:"</span><span class="token operator">+</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> e<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//静态方法</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>N<span class="token operator">></span> N <span class="token function">test03</span><span class="token punctuation">(</span>N n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"n:"</span><span class="token operator">+</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        GenericMethodDemo m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GenericMethodDemo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//如何确定到方法的参数T</span>
+
+        <span class="token comment" spellcheck="true">//JVM根据传入的方法的实参 - 拿到这个实参的类型 -> 方法的参数T</span>
+        m<span class="token punctuation">.</span><span class="token function">test01</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//Integer</span>
+
+        m<span class="token punctuation">.</span><span class="token function">test01</span><span class="token punctuation">(</span><span class="token string">"ok"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//ok</span>
+
+        <span class="token comment" spellcheck="true">//调用带有返回类型</span>
+        String ok <span class="token operator">=</span> m<span class="token punctuation">.</span><span class="token function">test02</span><span class="token punctuation">(</span><span class="token string">"ok"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>ok<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Integer t <span class="token operator">=</span> m<span class="token punctuation">.</span><span class="token function">test02</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"===="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//泛型是类型安全的</span>
+        Integer s <span class="token operator">=</span> GenericMethodDemo<span class="token punctuation">.</span><span class="token function">test03</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h1 id="泛型应用"><a href="#泛型应用" class="headerlink" title="泛型应用"></a>泛型应用</h1><pre class="line-numbers language-java"><code class="language-java">ObjectInputStream<span class="token operator">/</span>ObjectOuputStream <span class="token operator">-</span> 操作对象类型的字节文件输入流和对象类型的文件字节输出流
+  
+Object in<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">/</span>out<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>Object obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Jdk没有对readObject方法进行优化<span class="token punctuation">,</span>每次调用完之后<span class="token punctuation">,</span>进行强制类型的转换操作的<span class="token punctuation">.</span>
+  
+思考 <span class="token operator">-</span> 无论是保存<span class="token operator">/</span>读取User对象或者Book对象 <span class="token operator">-</span> 用一个方法去实现
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>util<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day13<span class="token punctuation">.</span>Book<span class="token punctuation">;</span>
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>Product<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ArrayList<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: IO流的工具类
+ *
+ * @author: success
+ * @date: 2021/8/7 10:59 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">IOUtil</span> <span class="token punctuation">{</span>
+
+    <span class="token comment" spellcheck="true">//提供一个方法可以保存任意对象</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">void</span> <span class="token function">writeList</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>T<span class="token operator">></span> list<span class="token punctuation">,</span>String path<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">try</span><span class="token punctuation">(</span>ObjectOutputStream out <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+            out<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">FileNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token comment" spellcheck="true">//提供一个方法可以读取文件中的任意对象</span>
+    <span class="token comment" spellcheck="true">//语法如果定义成了一个泛型类,并且是静态方法的话,那么必须要把这个静态方法也设置成泛型方法</span>
+    <span class="token comment" spellcheck="true">//如果是定义成了一个泛型类,但是是普通方法的话,那么这个普通方法是不需要设置成泛型方法的</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> List<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">readList</span><span class="token punctuation">(</span>String path<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        List<span class="token operator">&lt;</span>T<span class="token operator">></span> list <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">try</span><span class="token punctuation">(</span>ObjectInputStream in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+            list <span class="token operator">=</span> <span class="token punctuation">(</span>List<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">)</span> in<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">FileNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ClassNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> list<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">IOUtilTest</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Book b1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Book</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"1001"</span><span class="token punctuation">,</span><span class="token string">"python"</span><span class="token punctuation">,</span><span class="token number">100.0d</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Book b2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Book</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">"1002"</span><span class="token punctuation">,</span><span class="token string">"java"</span><span class="token punctuation">,</span><span class="token number">100.0d</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        List<span class="token operator">&lt;</span>Book<span class="token operator">></span> books <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        books<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>b1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        books<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>b2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String path <span class="token operator">=</span> <span class="token string">"src/tech/aistar/util/content.txt"</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//写入</span>
+        <span class="token comment" spellcheck="true">//IOUtil.writeList(books,path);</span>
+
+        <span class="token comment" spellcheck="true">//读</span>
+<span class="token comment" spellcheck="true">//        List&lt;Book> list = IOUtil.readList(path);</span>
+<span class="token comment" spellcheck="true">//        if(null!=list &amp;&amp; list.size()>0){</span>
+<span class="token comment" spellcheck="true">//            for (Book book : list) {</span>
+<span class="token comment" spellcheck="true">//                System.out.println(book);</span>
+<span class="token comment" spellcheck="true">//            }</span>
+<span class="token comment" spellcheck="true">//        }</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"======"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Product p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Product</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"macbook"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Product p2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Product</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">"linux"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        List<span class="token operator">&lt;</span>Product<span class="token operator">></span> products <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        products<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        products<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>p2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//IOUtil.writeList(products,path);</span>
+
+        List<span class="token operator">&lt;</span>Product<span class="token operator">></span> ps <span class="token operator">=</span> IOUtil<span class="token punctuation">.</span><span class="token function">readList</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token keyword">if</span><span class="token punctuation">(</span>null<span class="token operator">!=</span>ps <span class="token operator">&amp;&amp;</span> ps<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>Product p <span class="token operator">:</span> ps<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="泛型类的继承"><a href="#泛型类的继承" class="headerlink" title="泛型类的继承"></a>泛型类的继承</h1><blockquote>
+<ol>
+<li>子类不指定具体的类型</li>
+<li>子类指定具体的类型</li>
+</ol>
+</blockquote>
+<h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 泛型类的继承
+ *
+ * @author: success
+ * @date: 2021/8/9 8:34 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GenericExtendsDemo</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//泛型父类</span>
+<span class="token keyword">class</span> <span class="token class-name">Sup</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">{</span>
+    
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//子类继承父类的时候,没有指定具体的类型</span>
+<span class="token keyword">class</span> <span class="token class-name">Sub</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">Sup</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">{</span>
+    
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//子类继承父类的时候,指定了具体的类型</span>
+<span class="token keyword">class</span> <span class="token class-name">Sub01</span><span class="token operator">&lt;</span>Product<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">Sup</span><span class="token operator">&lt;</span>Product<span class="token operator">></span><span class="token punctuation">{</span>
+    
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="泛型的具体应用"><a href="#泛型的具体应用" class="headerlink" title="泛型的具体应用"></a>泛型的具体应用</h1><blockquote>
+<p>了解一下即可</p>
+<p>场景:在接口的制定中.很多接口具有相同的或者类似的功能.比如</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//dao层接口 - data access object - 数据访问对象层 - 数据持久层</span>
+<span class="token comment" spellcheck="true">//这一层专门和数据库[crud增删改查操作][文件_IO流操作]打交道</span>
+<span class="token comment" spellcheck="true">//教师的业务接口</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ITeacherDao</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//保存教师</span>
+ <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span>Teacher teacher<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//学生的业务接口</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IStudentDao</span><span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">// 保存学生</span>
+<span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span>Student student<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//再去写俩个具体的实现类分别是TeacherDaoImpl.java以及StudentDaoImpl.java</span>
+<span class="token comment" spellcheck="true">//这俩个实现类中 - 具体的代码,现阶段知识点 - 把单个java对象保存到文件中[IO流技术].</span>
+<span class="token comment" spellcheck="true">//未来 - 肯定是要把java对象保存到db中 - 持久化的操作[java内存中的对象保存到DB中]</span>
+
+<span class="token comment" spellcheck="true">//关于dao层 - java如何操作数据库 - 原生技术jdbc,dao层框架 - Hibernate框架以及mybatis框架</span>
+<span class="token comment" spellcheck="true">//比如现在选取的是所谓的Hibernate框架</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>Hibernate框架来把java的内存对象保存到DB中</code></p>
+<pre class="line-numbers language-java"><code class="language-java">session<span class="token punctuation">.</span><span class="token function">beginTransaction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//开启一个事务</span>
+session<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//具体的调用的是这个框架中的保存方法</span>
+session<span class="token punctuation">.</span><span class="token function">getTransaction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//提交一个事务</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<p><code>TeacherDaoImpl.java</code>伪代码</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TeacherDaoImpl</span> <span class="token keyword">implements</span> <span class="token class-name">ITeacherDao</span><span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span>Teacher teacher<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    session<span class="token punctuation">.</span><span class="token function">beginTransaction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//开启一个事务</span>
+    session<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>teacher<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//具体的调用的是这个框架中的保存方法</span>
+    session<span class="token punctuation">.</span><span class="token function">getTransaction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//提交一个事务</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>StudentDaoImpl.java</code></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDaoImpl</span> <span class="token keyword">implements</span> <span class="token class-name">IStudentDao</span><span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span>Student student<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    session<span class="token punctuation">.</span><span class="token function">beginTransaction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//开启一个事务</span>
+    session<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>student<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//具体的调用的是这个框架中的保存方法</span>
+    session<span class="token punctuation">.</span><span class="token function">getTransaction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//提交一个事务</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>发现在未来使用框架的时候,会发现很多步骤都是重复的.可能就涉及到具体的对象那一行的代码才会不一样而已</code></p>
+<pre class="line-numbers language-java"><code class="language-java">session<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>具体的java对象<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>考虑抽象出一个顶级的业务接口出来-IBaseDao&lt;T&gt;</code></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 顶级的业务接口
+ *
+ * @author: success
+ * @date: 2021/8/9 8:50 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IBaseDao</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//顶级的业务接口中应该存储的就是各个子接口中共性的方法</span>
+    <span class="token comment" spellcheck="true">//这些方法都有共同点 - 大部分的代码是一样的,仅仅是操作的对象不一样而已.</span>
+    <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>制定顶级的接口的实现类BaseDaoImpl.java</code></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>app<span class="token punctuation">.</span>dao<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 顶级接口的实现类
+ *
+ * @author: success
+ * @date: 2021/8/9 8:53 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BaseDaoImpl</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">IBaseDao</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//        session.beginTransaction();//开启一个事务</span>
+<span class="token comment" spellcheck="true">//        session.save(t);//具体的调用的是这个框架中的保存方法</span>
+<span class="token comment" spellcheck="true">//        session.getTransaction().commit();//提交一个事务</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>IStudentDao.java继承了顶级的业务接口</code></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>app<span class="token punctuation">.</span>dao<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>app<span class="token punctuation">.</span>Student<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 具体的业务接口去继承这个顶级的业务接口
+ *
+ * @author: success
+ * @date: 2021/8/9 8:52 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IStudentDao</span> <span class="token keyword">extends</span> <span class="token class-name">IBaseDao</span><span class="token operator">&lt;</span>Student<span class="token operator">></span><span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">taoKe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//子接口中特有的方法</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>ITeacherDao.java</code>继承了顶级的业务接口</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>app<span class="token punctuation">.</span>dao<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>app<span class="token punctuation">.</span>Teacher<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示:
+ *
+ * @author: success
+ * @date: 2021/8/9 8:52 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ITeacherDao</span> <span class="token keyword">extends</span> <span class="token class-name">IBaseDao</span><span class="token operator">&lt;</span>Teacher<span class="token operator">></span><span class="token punctuation">{</span>
+
+    <span class="token keyword">void</span> <span class="token function">buKe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//子接口中特有的方法</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>俩个具体的实现类 - 需要继承顶级的BaseDaoImpl.java - save方法已经实现好了.同时还需要各自实现自己的接口</code></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>app<span class="token punctuation">.</span>dao<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>app<span class="token punctuation">.</span>Student<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 具体的学生接口的实现类
+ *
+ * @author: success
+ * @date: 2021/8/9 8:55 上午
+ */</span>
+<span class="token comment" spellcheck="true">//泛型继承 - 指定了泛型类</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDaoImpl</span> <span class="token keyword">extends</span> <span class="token class-name">BaseDaoImpl</span><span class="token operator">&lt;</span>Student<span class="token operator">></span>  <span class="token keyword">implements</span> <span class="token class-name">IStudentDao</span><span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">taoKe</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"逃课..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>app<span class="token punctuation">.</span>dao<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>app<span class="token punctuation">.</span>Teacher<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示:
+ *
+ * @author: success
+ * @date: 2021/8/9 9:02 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TeacherDaoImpl</span> <span class="token keyword">extends</span> <span class="token class-name">BaseDaoImpl</span><span class="token operator">&lt;</span>Teacher<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">ITeacherDao</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">buKe</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"补课..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>单元测试</code></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>app<span class="token punctuation">.</span>dao<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>app<span class="token punctuation">.</span>Student<span class="token punctuation">;</span>
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>app<span class="token punctuation">.</span>Teacher<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示:
+ *
+ * @author: success
+ * @date: 2021/8/9 8:56 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestBase</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Student s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"tom"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        IStudentDao studentDao <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StudentDaoImpl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        studentDao<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Teacher teacher <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Teacher</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"仓考试"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ITeacherDao teacherDao <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TeacherDaoImpl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        teacherDao<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>teacher<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h1><blockquote>
+<p>枚举常量 - 类型安全的常量 - 公共的静态的常量[final]属性 - 不可变的</p>
+</blockquote>
+<blockquote>
+<p>jdk5.0开始提供的,以前的作用就是用<strong>来替代常量接口的</strong></p>
+<p>回忆常量接口 - 管理和维护项目中所有的常量的</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IConsts</span><span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//最全的写法 - 接口中只能出现公开的静态的常量属性</span>
+<span class="token comment" spellcheck="true">//public static final int Car = 1;</span>
+
+<span class="token comment" spellcheck="true">//精简的写法</span>
+<span class="token comment" spellcheck="true">//public int CAR = 1;</span>
+
+<span class="token comment" spellcheck="true">//最精简的写法</span>
+<span class="token keyword">int</span> CAR <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><blockquote>
+<p>使用enum关键字来定义一个枚举类型的</p>
+<p>switch()中的参数类型可以是byte,short,int,char,<strong>enum</strong>,String,Byte,Short,Integer</p>
+</blockquote>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><blockquote>
+<ol>
+<li><p>枚举常量,多个枚举常量,使用,隔开.最后一个枚举常量不需要使用逗号了.</p>
+<p>如果最后一个枚举常量下面还有代码的话,那么需要使用分号隔开</p>
+</li>
+<li><p>允许存在构造 - 访问修饰符不能是公开的,protected</p>
+</li>
+<li><p>枚举类型是不能够被实例化的</p>
+</li>
+<li><p>枚举类型中可以提供普通属性</p>
+</li>
+<li><p><strong>每个枚举类型默认都会自动继承java.lang.Enum&lt;E extends Enum<E>&gt;</E></strong></p>
+</li>
+<li><p>枚举类型中是可以存在抽象方法的,但是每个枚举常量必须要实现这个抽象方法</p>
+</li>
+<li><p>枚举类型不支持再去extends另外一个枚举类型</p>
+</li>
+<li><p>枚举类型不支持再去手动extends另外一个类</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><blockquote>
+<p>如果某些属性具有固定的一些标识,就可以考虑定义成枚举类型.</p>
+<p>比如:User实体类中维护了一个性别属性Gender[性别的枚举类型]</p>
+<p>比如:Order实体类也会存在固定的状态 - 未付款,已付款.已下单未付款.取消订单等…</p>
+</blockquote>
+<h2 id="字符串-gt-枚举常量"><a href="#字符串-gt-枚举常量" class="headerlink" title="字符串-&gt;枚举常量"></a>字符串-&gt;枚举常量</h2><blockquote>
+<p>比如一个注册页面</p>
+<table>
+<thead>
+<tr>
+<th>用户名</th>
+<th>tom</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>性别</td>
+<td>单选按钮 男  单选按钮 女</td>
+</tr>
+<tr>
+<td></td>
+<td>确定按钮</td>
+</tr>
+</tbody></table>
+<p>未来.当点击确定按钮,后台接受到M,F - 后台接受到的数据都是字符串数据.</p>
+<p>我们是不能够直接将这个字符串数据设置到实体类中的枚举常量属性上的.</p>
+<p>每个自定义的枚举类型Gender.java默认都会继承java.lang.Enum&lt;E extends Enum<E>&gt;</E></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T <span class="token keyword">extends</span> <span class="token class-name">Enum</span><span class="token operator">&lt;</span>T<span class="token operator">>></span> T <span class="token function">valueOf</span><span class="token punctuation">(</span>Class<span class="token operator">&lt;</span>T<span class="token operator">></span> enumType<span class="token punctuation">,</span>
+                                             String name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<blockquote>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>enums<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: String->枚举类型
+ *
+ * @author: success
+ * @date: 2021/8/9 10:10 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StringToEnumDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String gender <span class="token operator">=</span> <span class="token string">"F"</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//接受到页面传过来的数据 - 都是字符串类型</span>
+        <span class="token comment" spellcheck="true">//字符串类型是不能够直接设置给实体类的那个枚举常量属性上的</span>
+
+        <span class="token comment" spellcheck="true">//System.out.println(FString.class);</span>
+       <span class="token comment" spellcheck="true">// System.out.println(Integer.class);</span>
+        <span class="token comment" spellcheck="true">//Class&lt;?> c = String.class;</span>
+        <span class="token comment" spellcheck="true">//System.out.println(c);</span>
+
+        <span class="token comment" spellcheck="true">//将字符串转换成枚举常量类型</span>
+
+        <span class="token comment" spellcheck="true">//注意 - 字符串的值一定是和枚举常量的名称是保持一致的.</span>
+        <span class="token comment" spellcheck="true">//否则 - java.lang.IllegalArgumentException:</span>
+        <span class="token comment" spellcheck="true">//      No enum constant tech.aistar.day14.enums.Gender.S</span>
+        Gender g <span class="token operator">=</span> Enum<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>Gender<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>gender<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        User user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"tom"</span><span class="token punctuation">,</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h2 id="枚举单例"><a href="#枚举单例" class="headerlink" title="枚举单例"></a>枚举单例</h2><blockquote>
+<p>它是effective java作者极力推荐的写法 - 枚举实例 - 1. 枚举类型天生就是线程安全的.2. 可以防止序列化或者反射来破坏这种单例的.</p>
+<p>单例 - 保证在整个应用程序中,某个类的具体的实例永远只有1个.</p>
+<p>什么时候需要把类做成单例的 - 这个类是一个重量级的类[类的创建和销毁的成本比较高.]</p>
+</blockquote>
+<h2 id="枚举常量是类型安全的常量"><a href="#枚举常量是类型安全的常量" class="headerlink" title="枚举常量是类型安全的常量???"></a>枚举常量是类型安全的常量???</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> Gender<span class="token punctuation">{</span>
+  F<span class="token punctuation">,</span>M
+<span class="token punctuation">}</span>
+因为使用枚举常量 <span class="token operator">-</span> 第一步肯定是先加载枚举类型Gender <span class="token operator">-</span> JVM通过类加载器<span class="token punctuation">[</span>java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>ClassLoader<span class="token punctuation">]</span>来加载枚举类型
+<span class="token keyword">protected</span> Class<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">></span> <span class="token function">loadClass</span><span class="token punctuation">(</span>String name<span class="token punctuation">,</span> <span class="token keyword">boolean</span> resolve<span class="token punctuation">)</span>
+        <span class="token keyword">throws</span> ClassNotFoundException <span class="token punctuation">{</span>
+  
+            <span class="token comment" spellcheck="true">//使用到了synchronized关键字</span>
+        <span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token function">getClassLoadingLock</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//.... 加载类,接口,枚举类型到JVM内存</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+很多线程都在调用Gender<span class="token punctuation">.</span>M <span class="token operator">-</span> <span class="token operator">></span> 都想尝试加载Gender枚举类型到JVM内存<span class="token punctuation">.</span>但是由于loadClass加载的那块代码使用到了<span class="token keyword">synchronized</span><span class="token punctuation">[</span>锁<span class="token punctuation">]</span>
+只能由一个线程进去执行<span class="token punctuation">,</span>并且只会执行一次<span class="token punctuation">.</span>
+  
+由于每个枚举常量F 本质 就是 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> Gender F <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Gender</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//使用到了static关键字</span>
+<span class="token comment" spellcheck="true">//意味着当枚举类型一旦被加载了,枚举常量立即就会被分配空间以及初始化,并且机会只有一次.所以在整个内存中F常量也就只会存在一份.</span>
+<span class="token comment" spellcheck="true">//无论在哪里被调用.无论被多少给线程调用 - 大家拿到的都是同一个/同一份那个枚举常量.</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="具体的代码的实现"><a href="#具体的代码的实现" class="headerlink" title="具体的代码的实现"></a>具体的代码的实现</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>design<span class="token punctuation">.</span>singleton<span class="token punctuation">.</span>version04<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 枚举单例实现方式
+ *
+ * @author: success
+ * @date: 2021/8/9 10:45 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton04</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token function">Singleton04</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"私有化构造"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//内部的枚举类型</span>
+    <span class="token keyword">private</span> <span class="token keyword">enum</span> SingletonEnum<span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//枚举常量的实例</span>
+        INSTANCE<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//public static final SingletonEnum INSTANCE = new SingletonEnum();</span>
+
+        <span class="token comment" spellcheck="true">//final修饰的变量要赋值</span>
+        <span class="token keyword">private</span> <span class="token keyword">final</span> Singleton04 instance<span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//枚举类型提供一个空参构造 - 枚举类型是不能new的</span>
+        <span class="token function">SingletonEnum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton04</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//提供一个普通方法</span>
+        <span class="token keyword">public</span> Singleton04 <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//外部类肯定是要提供一个方法,返回自己的一个唯一实例的</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton04 <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       
+        <span class="token keyword">return</span> SingletonEnum<span class="token punctuation">.</span>INSTANCE<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">TestSingle04</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1 <span class="token operator">==</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="枚举单例写法"><a href="#枚举单例写法" class="headerlink" title="枚举单例写法"></a>枚举单例写法</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 枚举单例 - 最精简的写法 - 多线程安全的写法 - 饿汉模式
+                              只有最外层的是枚举类型 - 序列化这个枚举类型的单例,才能阻止序列化破坏单例的模式
+ *
+ * @author: success
+ * @date: 2021/8/9 11:11 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> Singleton05 <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//public static final Singleton05 INSTANCE = new Singleton05();</span>
+    INSTANCE<span class="token punctuation">;</span>
+
+    <span class="token function">Singleton05</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"比较繁琐的操作的事情,费时费力的事情"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton05 <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> INSTANCE<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>对比饿汉模式的写法</code></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton01</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//2. 初始化一个变量,该变量就是该类的唯一实例[对象]</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singleton01 instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton01</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//1. 私有化构造</span>
+    <span class="token keyword">private</span> <span class="token function">Singleton01</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//比较费时费力的代码,可能需要更多的时间</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Singleton01..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//3. 提供一个公开的静态的方法来返回这个类的唯一实例</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton01 <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="枚举单例阻止序列化的破坏"><a href="#枚举单例阻止序列化的破坏" class="headerlink" title="枚举单例阻止序列化的破坏"></a>枚举单例阻止序列化的破坏</h3><blockquote>
+<ol>
+<li>序列化单例对象s1</li>
+<li>反序列化封装到单例对象s3</li>
+<li>s1 == s3 ;// 仍然为true</li>
+</ol>
+</blockquote>
+<blockquote>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>design<span class="token punctuation">.</span>singleton<span class="token punctuation">.</span>version05<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>enums<span class="token punctuation">.</span>Gender<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 枚举单例 - 最精简的写法
+ *
+ * @author: success
+ * @date: 2021/8/9 11:11 上午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> Singleton05 <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//public static final Singleton05 INSTANCE = new Singleton05();</span>
+    INSTANCE<span class="token punctuation">;</span>
+
+    <span class="token function">Singleton05</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"比较繁琐的操作的事情,费时费力的事情"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton05 <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> INSTANCE<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">TestSingleton05</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Singleton05 s1 <span class="token operator">=</span> Singleton05<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Singleton05 s2 <span class="token operator">=</span> Singleton05<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1 <span class="token operator">==</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+
+        <span class="token comment" spellcheck="true">//序列化</span>
+        <span class="token keyword">try</span><span class="token punctuation">(</span>ObjectOutputStream out <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">"src/tech/aistar/design/ss.txt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//对单例进行序列化操作</span>
+            out<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">FileNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">//反序列化</span>
+        <span class="token keyword">try</span><span class="token punctuation">(</span>ObjectInputStream in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"src/tech/aistar/design/ss.txt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+            Singleton05 s3 <span class="token operator">=</span> <span class="token punctuation">(</span>Singleton05<span class="token punctuation">)</span> in<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1 <span class="token operator">==</span> s3<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+
+
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">FileNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ClassNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h2 id="枚举细节-抽象方法"><a href="#枚举细节-抽象方法" class="headerlink" title="枚举细节 - 抽象方法"></a>枚举细节 - 抽象方法</h2><blockquote>
+<p>枚举类型中是可以存在抽象方法的,但是每个枚举常量必须要实现这个抽象方法</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day14<span class="token punctuation">.</span>enums<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 季节的枚举类型
+ *
+ * @author: success
+ * @date: 2021/8/9 1:43 下午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> Season<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//枚举类型中是可以存在抽象方法的,但是每个枚举常量必须要实现这个抽象方法</span>
+    <span class="token function">SPRING</span><span class="token punctuation">(</span><span class="token string">"春天"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> Season <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> Season<span class="token punctuation">.</span>SUMMER<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">SUMMER</span><span class="token punctuation">(</span><span class="token string">"夏天"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> Season <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> Season<span class="token punctuation">.</span>AUTUMN<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">AUTUMN</span><span class="token punctuation">(</span><span class="token string">"秋天"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> Season <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> Season<span class="token punctuation">.</span>WINTER<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">WINTER</span><span class="token punctuation">(</span><span class="token string">"冬天"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> Season <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> Season<span class="token punctuation">.</span>SPRING<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> String sign<span class="token punctuation">;</span>
+
+    <span class="token function">Season</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token function">Season</span><span class="token punctuation">(</span>String sign<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>sign <span class="token operator">=</span> sign<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> String <span class="token function">getSign</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> sign<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//提供一个抽象方法 - 但是要求所有的枚举常量都要重写这个抽象方法</span>
+    <span class="token keyword">public</span> <span class="token keyword">abstract</span> Season <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TestSeason</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Season s <span class="token operator">=</span> Season<span class="token punctuation">.</span>SPRING<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span>s<span class="token punctuation">.</span><span class="token function">getSign</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">//让程序睡一秒钟</span>
+                Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            s <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">码农耕地人</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2021/08/07/%E6%B3%9B%E5%9E%8BGeneric/">http://example.com/2021/08/07/%E6%B3%9B%E5%9E%8BGeneric/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">码农耕地人</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%B3%9B%E5%9E%8B/">
+                                    <span class="chip bg-color">泛型</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/08/10/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="进程和线程">
+                        
+                        <span class="card-title">进程和线程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java%E5%85%A5%E9%97%A8/" class="post-category">
+                                    java入门
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/">
+                        <span class="chip bg-color">进程和线程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/08/06/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="工厂模式">
+                        
+                        <span class="card-title">工厂模式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                    设计模式
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">工厂模式</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录
+            </div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fas fa-list-ul"></i>
+        </a>
+    </div>
+    
+
+        <script src="/libs/tocbot/tocbot.min.js"></script>
+        <script>
+            $(function () {
+                tocbot.init({
+                    tocSelector: '#toc-content',
+                    contentSelector: '#articleContent',
+                    headingsOffset: -($(window).height() * 0.4 - 45),
+                    collapseDepth: Number('0'),
+                    headingSelector: 'h2, h3, h4'
+                });
+
+                // modify the toc link href to support Chinese.
+                let i = 0;
+                let tocHeading = 'toc-heading-';
+                $('#toc-content a').each(function () {
+                    $(this).attr('href', '#' + tocHeading + (++i));
+                });
+
+                // modify the heading title id to support Chinese.
+                i = 0;
+                $('#articleContent').children('h2, h3, h4').each(function () {
+                    $(this).attr('id', tocHeading + (++i));
+                });
+
+                // Set scroll toc fixed.
+                let tocHeight = parseInt($(window).height() * 0.4 - 64);
+                let $tocWidget = $('.toc-widget');
+                $(window).scroll(function () {
+                    let scroll = $(window).scrollTop();
+                    /* add post toc fixed. */
+                    if (scroll > tocHeight) {
+                        $tocWidget.addClass('toc-fixed');
+                    } else {
+                        $tocWidget.removeClass('toc-fixed');
+                    }
+                });
+
+        
+                    /* 修复文章卡片 div 的宽度. */
+                    let fixPostCardWidth = function (srcId, targetId) {
+                        let srcDiv = $('#' + srcId);
+                        if (srcDiv.length === 0) {
+                            return;
+                        }
+
+                        let w = srcDiv.width();
+                        if (w >= 450) {
+                            w = w + 21;
+                        } else if (w >= 350 && w < 450) {
+                            w = w + 18;
+                        } else if (w >= 300 && w < 350) {
+                            w = w + 16;
+                        } else {
+                            w = w + 14;
+                        }
+                        $('#' + targetId).width(w);
+                    };
+
+                    // 切换TOC目录展开收缩的相关操作.
+                    const expandedClass = 'expanded';
+                    let $tocAside = $('#toc-aside');
+                    let $mainContent = $('#main-content');
+                    $('#floating-toc-btn .btn-floating').click(function () {
+                        if ($tocAside.hasClass(expandedClass)) {
+                            $tocAside.removeClass(expandedClass).hide();
+                            $mainContent.removeClass('l9');
+                        } else {
+                            $tocAside.addClass(expandedClass).show();
+                            $mainContent.addClass('l9');
+                        }
+                        fixPostCardWidth('artDetail', 'prenext-posts');
+                    });
+        
+    });
+        </script>
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">码农耕地人</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">336.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zhugefeng/zhugefeng.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:156035828@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=156035828" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 156035828" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/xxx" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/xxx" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"left"},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+
+</html>

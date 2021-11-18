@@ -1,0 +1,1733 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="java入门, 码农耕地人">
+    <meta name="description" content="码农耕地人">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>java入门 | 码农耕地人</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="码农耕地人" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+<!-- 雪花特效 -->
+
+
+<script type="text/javascript" src="/libs/others/sakura.js"></script>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">码农耕地人</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">码农耕地人</div>
+        <div class="logo-desc">
+            
+            码农耕地人
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">java入门</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255, 0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+        opacity: 0.7;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        /* -    padding-bottom: 30px; */
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java%E5%85%A5%E9%97%A8/">
+                                <span class="chip bg-color">java入门</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/java%E5%85%A5%E9%97%A8/" class="post-category">
+                                java入门
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-08-02
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    13 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Java能做什么"><a href="#Java能做什么" class="headerlink" title="Java能做什么"></a>Java能做什么</h1><blockquote>
+<ol>
+<li><p>传统的项目 - 简单的,公司内部使用的,不会存在高并发的问题.</p>
+<p>教务管理系统,OA自动化办公系统,CRM客户关系管理系统,ERP企业资源计划系统</p>
+</li>
+<li><p>B2C - 典型的电子商务模式,涉及到高并发的业务</p>
+<p>企业2客户 - 企业卖自己的服务或者产品</p>
+</li>
+<li><p>C2B2C - 新型的模式 - 淘宝</p>
+<p>平台 - 对双方进行监管</p>
+<p>卖家</p>
+<p>买家</p>
+</li>
+<li><p>大数据 - 一定是对业务非常熟悉[数据分析,数据非常敏感]</p>
+</li>
+</ol>
+</blockquote>
+<h1 id="Java的历史"><a href="#Java的历史" class="headerlink" title="Java的历史"></a>Java的历史</h1><blockquote>
+<ol>
+<li><p>原先是属于SUN公司[Stanford University Network 斯坦福网络大学]</p>
+<p>Sun Microsystem - 太阳微电子公司</p>
+</li>
+<li><p>后来在2010年10月份被Oracle公司[出名的产品-oracle数据库 - NO.1]</p>
+<p>74亿美金收购 - <a target="_blank" rel="noopener" href="http://www.oracle.com/">www.oracle.com</a></p>
+</li>
+<li><p>前身Oak语言[橡树],印度尼西亚的<strong>爪哇</strong>岛[咖啡豆 - javabean]</p>
+</li>
+<li><p>诞生于1995年5月23日,96年正式推出jdk1.0版本.</p>
+</li>
+<li><p>商用的jdk版本 - <strong>jdk8.x</strong> , jdk11.x ,jdk16.x</p>
+</li>
+<li><p>java之父 - james gosling 詹姆斯 高斯林</p>
+</li>
+</ol>
+</blockquote>
+<h1 id="Java支持的三个平台"><a href="#Java支持的三个平台" class="headerlink" title="Java支持的三个平台"></a>Java支持的三个平台</h1><blockquote>
+<p>原先的名称j2se , j2ee, j2me</p>
+<ol>
+<li><p>JavaSE - Java Standard Editional - Java标准版</p>
+<p>适合做<strong>桌面应用程序[维护比较麻烦,服务器端如果更新,客户端需要更新]</strong>,包含了java里面的基础的语法,核心</p>
+</li>
+<li><p>JavaEE - 2018年 - JakartaEE - 雅佳达EE - Java Enterprise Editional - Java企业版</p>
+<p>是一套技术的规范的体系.不是一门具体的技术.里面包含了13种核心技术</p>
+<p>比如jdbc,servlet等遵守javaee的规范.现在javaee里面的核心技术已经使用不多了</p>
+<p>现在普遍都在使用spring全家桶中的技术.</p>
+<p>适合做web应用程序[web网站]</p>
+</li>
+<li><p>JavaME - Java Micro Editional - Java微型版,适合做手持设备 - “不用”</p>
+</li>
+</ol>
+</blockquote>
+<h1 id="检测一下jdk的环境变量是否配置成功"><a href="#检测一下jdk的环境变量是否配置成功" class="headerlink" title="检测一下jdk的环境变量是否配置成功"></a>检测一下jdk的环境变量是否配置成功</h1><blockquote>
+<p>打开终端,输入cmd - 输入java -version</p>
+<pre class="line-numbers language-java"><code class="language-java">admindeMacBook<span class="token operator">-</span>Pro<span class="token operator">:</span>Desktop admin$ java <span class="token operator">-</span>version
+java version <span class="token string">"1.8.0_66"</span>
+<span class="token function">Java</span><span class="token punctuation">(</span>TM<span class="token punctuation">)</span> SE Runtime <span class="token function">Environment</span> <span class="token punctuation">(</span>build <span class="token number">1.8</span><span class="token punctuation">.</span>0_66<span class="token operator">-</span>b17<span class="token punctuation">)</span>
+Java <span class="token function">HotSpot</span><span class="token punctuation">(</span>TM<span class="token punctuation">)</span> <span class="token number">64</span><span class="token operator">-</span>Bit Server <span class="token function">VM</span> <span class="token punctuation">(</span>build <span class="token number">25.66</span><span class="token operator">-</span>b17<span class="token punctuation">,</span> mixed mode<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h2 id="环境变量的配置"><a href="#环境变量的配置" class="headerlink" title="环境变量的配置"></a>环境变量的配置</h2><blockquote>
+<p>Java.zip - 解压缩 - 比如放在D盘</p>
+</blockquote>
+<blockquote>
+<p>所有的软件不要放在中文目录下,不要放在带有特殊符号的目录下[programe files(x86)]</p>
+<p>尽量不要放在C盘[权限的问题,拒绝你的访问的]</p>
+</blockquote>
+<blockquote>
+<p>桌面 - 右击计算机 - 属性 - 高级系统设置 - 环境变量(N) - 定位到系统变量</p>
+<ol>
+<li><p>新建</p>
+<p>变量名:JAVA_HOME</p>
+<p>变量值:jdk1.8.0_66的绝对路径</p>
+<p>确定</p>
+</li>
+<li><p>找到内置的变量名Path - 编辑 - 新建</p>
+<p>%JAVA_HOME%\bin</p>
+</li>
+<li><p>关闭刚所有打开的设置窗口,重新打开终端[黑窗口]</p>
+<p>win+r - cmd -&gt;输入  java -version</p>
+</li>
+</ol>
+</blockquote>
+<h1 id="Java语言特点"><a href="#Java语言特点" class="headerlink" title="Java语言特点"></a>Java语言特点</h1><blockquote>
+<ol>
+<li>简单</li>
+<li>可移植性</li>
+<li>面向对象 - 核心</li>
+<li>与平台无关性[跨平台性,跨操作系统平台]</li>
+<li>安全性 - 本身是属于强类型的语言.在编译期间就要确定数据的类型.</li>
+</ol>
+</blockquote>
+<h1 id="JDK和JRE和JVM"><a href="#JDK和JRE和JVM" class="headerlink" title="JDK和JRE和JVM"></a>JDK和JRE和JVM</h1><blockquote>
+<p><strong>三者之间的区别</strong> -  简单题 - 笔试</p>
+<ol>
+<li><p>JDK - Java Development Kit - Java开发工具包,针对于开发者的.包含了很多开发工具</p>
+<p>比如java.exe , javac.exe, javadoc.exe , jar.exe等</p>
+<p><strong>JDK中是包含JRE的</strong></p>
+</li>
+<li><p>JRE - Java Runtime Enviroment - Java运行时环境,包含了很多核心的内库.</p>
+<p>针对于使用java语言开发出来软件的用户.如果一个用户仅仅想运行一个java程序的话</p>
+<p>那么计算机中只需要安装jre即可.</p>
+<p><strong>JRE包含JVM</strong></p>
+</li>
+<li><p>JVM - Java Virtual Machine - Java虚拟机 - 后期重点详细介绍jvm[笔试的大头 - 内存模型]</p>
+<p>jvm本身就是用C语言编写的 - jvm的源码通读一遍.</p>
+<p><strong>java程序并不是直接在计算机中进行跑的.而是在虚拟机上执行的.虚拟机是安装在操作系统上的.</strong></p>
+<p><strong>注意的是java语言是跨平台的[使用java语言编写的程序可以运行在不同的os上],但是jvm不是跨平台的</strong></p>
+<p><strong>不同的操作系统需要安装不同的jvm</strong></p>
+</li>
+</ol>
+</blockquote>
+<h1 id="HelloWorld程序"><a href="#HelloWorld程序" class="headerlink" title="HelloWorld程序"></a>HelloWorld程序</h1><blockquote>
+<p>java的基础单元是类class</p>
+<p><strong>类的命名</strong> - 标识符的命名</p>
+<ol>
+<li><p>只能由字母,数字,下划线,$符号组成,但是不能以数字开头</p>
+</li>
+<li><p>推荐使用”大驼峰”命名规则,单词首字母必须要大写.其余单词小写</p>
+</li>
+<li><p>不能是jdk中内置的对象类型[String,System]</p>
+</li>
+<li><p>不能是java中的一些关键字,关键字[java语言赋予了这些单词具备一定的语法含义]</p>
+<p>byte,short,int,long,float,double,char,boolean,if,for,else,while,break,continue,class,</p>
+<p>public,private,protected等</p>
+</li>
+<li><p>不能是java中的保留关键字 - goto,const</p>
+</li>
+<li><p>不推荐使用中文,防止出现乱码问题.</p>
+</li>
+<li><p>不推荐使用中文的拼音</p>
+</li>
+<li><p>推荐见名知意</p>
+</li>
+<li><p>不能是以下三个字面量 - true,false,null</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><blockquote>
+<ol>
+<li><p>在D盘根目下新建一个文件HelloWorld.java</p>
+<p>java的源文件就是以.java为后缀的文件</p>
+</li>
+<li><p>记事本打开HelloWorld.java文件</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//编程语言中,只要出现了符号,一定必须都是英文输入法下的</span>
+<span class="token comment" spellcheck="true">//整体的结构</span>
+<span class="token comment" spellcheck="true">//java是以类作为基础的单位的 - 定义类</span>
+<span class="token comment" spellcheck="true">//关键是class</span>
+<span class="token comment" spellcheck="true">//类的名称要和文件的名称高度保持一致</span>
+<span class="token comment" spellcheck="true">//{} - block - 块 - 代码块</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//1. 类</span>
+    <span class="token comment" spellcheck="true">//规范 - 缩进四个空格</span>
+    <span class="token comment" spellcheck="true">//定义一个main方法 - 程序的"大门"</span>
+    <span class="token comment" spellcheck="true">//运行该程序的时候,jvm就会自动寻找main方法,然后进入到这个main</span>
+    <span class="token comment" spellcheck="true">//方法中去执行</span>
+    <span class="token comment" spellcheck="true">//今天先记住语法</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//2. 方法</span>
+       <span class="token comment" spellcheck="true">//方法体,现阶段代码一定是放在方法体内部的.</span>
+       <span class="token comment" spellcheck="true">//jdk中提供了内置的对象[拥有一些功能],提供好了,开发者就可以直接使用</span>
+       <span class="token comment" spellcheck="true">//java.lang.System类 - 向控制台输出一句话</span>
+       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"HelloWorld"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//3. 具体的程序</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li><p>java源代码是不能够直接执行的.因为计算机是不识别java语言程序的.</p>
+<p>需要对.java为后缀的源文件进行一个<strong>编译操作</strong>.如果一旦语法发生了问题,都会导致编译失败.</p>
+<p>假设HelloWorld.java文件是放在D盘根目录下,需要打开终端,然后通过dos命令进入到D盘</p>
+<pre class="line-numbers language-cmd"><code class="language-cmd">C:/User/admin>d:
+D:/>javac HelloWorld.java
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><code>效果,javac.exe工具其实就是在调用jdk中的编译器,作用:就是.java源文件编译成.class字节码文件</code></p>
+</li>
+<li><p>思考如何运行一个java程序呢?</p>
+<p>利用java.exe</p>
+<pre class="line-numbers language-java"><code class="language-java">D<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">></span>java HelloWorld
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><blockquote>
+<ol>
+<li>编写.java源代码</li>
+<li>javac.exe - 编译</li>
+<li>java.exe - 执行</li>
+</ol>
+</blockquote>
+<h2 id="Java程序的执行的原理"><a href="#Java程序的执行的原理" class="headerlink" title="Java程序的执行的原理"></a>Java程序的执行的原理</h2><p><img src="/2021/08/02/java%E5%85%A5%E9%97%A8/hello-hexo/hello-blog/source/_posts/imgs/jvm.png">  </p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token punctuation">.</span>java源文件 <span class="token operator">-</span><span class="token operator">></span> 经过jdk中的编译器<span class="token punctuation">,</span>成为<span class="token punctuation">.</span><span class="token keyword">class</span>字节码文件 <span class="token operator">-</span><span class="token operator">></span> 经过jvm中的解释器<span class="token punctuation">[</span>进行逐行翻译<span class="token punctuation">(</span>解释<span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token operator">-</span><span class="token operator">></span> 机器能够识别的符号
+
+java属于解释型的语言<span class="token punctuation">,</span><span class="token string">"JVM把它YY成以.class字节码为指令的CPU"</span>
+
+编译型语言 <span class="token operator">-</span> C语言<span class="token punctuation">,</span>将这个语言编写的程序直接编译成计算机能够执行的程序<span class="token punctuation">.</span>比如C语言写的代码可以直接编译成可执行文件 xx<span class="token punctuation">.</span>exe
+
+C语言执行的性能高于java语言<span class="token punctuation">(</span>每次执行都会经过jvm解释器进行解释<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="集成开发环境"><a href="#集成开发环境" class="headerlink" title="集成开发环境"></a>集成开发环境</h1><blockquote>
+<ol>
+<li><p>eclipse[日食] - 免费的,IBM公司的产品[收购SUN公司的] </p>
+</li>
+<li><p>idea - 最好的,收费的</p>
+<p>d:/aistar/j03s_student</p>
+</li>
+</ol>
+</blockquote>
+<h1 id="Java中的包-package"><a href="#Java中的包-package" class="headerlink" title="Java中的包-package"></a>Java中的包-package</h1><blockquote>
+<ol>
+<li><p>包是用来管理类的.包的本质就是一个文件夹.包对于类的作用相当于文件夹对于文件的作用.</p>
+</li>
+<li><p>包的命名规则</p>
+<p>2-1. 推荐全部采用小写字母,如果出现多个单词,请你用.隔开,.隔开的每个部分都是一个目录</p>
+<p>2-2. 包的命名推荐采用公司的域名倒置[唯一性] + 项目代号</p>
+<p>​       com.baidu.car   tech.aistar</p>
+<p>2-3. 不用采用java或者javax开头 - 因为jdk中的内置的类和拓展的类都是在java或者javax包中.</p>
+</li>
+<li><p>一旦创建了package,需要在类文件的<strong>首行</strong>采用<strong>package关键字来声明包.</strong></p>
+</li>
+</ol>
+</blockquote>
+<h1 id="java中三种注释"><a href="#java中三种注释" class="headerlink" title="java中三种注释"></a>java中三种注释</h1><blockquote>
+<ol>
+<li><p>单行注释 //   ctrl+/  添加/取消注释</p>
+</li>
+<li><p>多行注释</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*
+ * 
+ *  多行注释的内容 - 注释的内容是不会经过jdk的编译器的
+ *
+ */</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>文档注释</p>
+<blockquote>
+<p>可以生成文档树</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+* 放在类上面
+
+* 放在方法上
+*
+*/</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+<h1 id="main方法细节"><a href="#main方法细节" class="headerlink" title="main方法细节"></a>main方法细节</h1><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span><span class="token punctuation">[</span>公开的<span class="token punctuation">,</span>公共的<span class="token punctuation">]</span> <span class="token keyword">static</span><span class="token punctuation">[</span>静态的<span class="token punctuation">]</span> <span class="token operator">-</span> 都是属于后期学习OO中的修饰符
+修饰符在使用的时候<span class="token punctuation">,</span>之间是没有顺序的<span class="token punctuation">.</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>    <span class="token comment" spellcheck="true">//ok</span>
+
+<span class="token keyword">static</span> <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>   <span class="token comment" spellcheck="true">//ok</span>
+
+<span class="token comment" spellcheck="true">//jdk8中方法的参数支持可变长参数</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>  <span class="token comment" spellcheck="true">//ok</span>
+
+<span class="token comment" spellcheck="true">//args - 我们传给虚拟机的参数</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="输出语句"><a href="#输出语句" class="headerlink" title="输出语句"></a>输出语句</h1><blockquote>
+<ol>
+<li><p>System.out.println(); // 换行</p>
+<pre class="line-numbers language-java"><code class="language-java">System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>\n和\r</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day01<span class="token punctuation">;</span>
+         
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: \n \r
+ *
+ * @author: success
+ * @date: 2021/7/15 3:18 下午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NrDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//相当于是System.out.println("hello");</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"hello\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//输出之后不换行</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         
+        <span class="token comment" spellcheck="true">// \n - 当输出完毕之后,光标停在下一行的起始位置 - 换行</span>
+         
+        <span class="token comment" spellcheck="true">// \r - 当输出完毕之后,光标停在当前行的起始位置 回车</span>
+                 
+        <span class="token comment" spellcheck="true">// \n\r 诞生的场景就是早期的打字机</span>
+         
+        <span class="token comment" spellcheck="true">//外面的终端执行的结果是 - veyy    √</span>
+                 
+        <span class="token comment" spellcheck="true">//伪终端显示的结果是 - ve</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Loyy\rve"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<h1 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h1><blockquote>
+<p>\ 是代表转义字符</p>
+</blockquote>
+<blockquote>
+<ol>
+<li><p>\n - 当输出完毕之后,光标停在下一行的起始位置 - 换行</p>
+</li>
+<li><p>\r - 当输出完毕之后,光标停在当前行的起始位置 回车</p>
+</li>
+<li><p>\b - 退格</p>
+</li>
+<li><p>\t - 制表符,相当于tab键,默认是空4格</p>
+</li>
+<li><p>双引号</p>
+<pre class="line-numbers language-java"><code class="language-java">\"
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>单引号</p>
+<pre class="line-numbers language-java"><code class="language-java">\'
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>单个\</p>
+<pre class="line-numbers language-java"><code class="language-java">\\
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day01<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 特殊字符
+ *
+ * @author: success
+ * @date: 2021/7/15 3:35 下午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SignDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//\b - 退格</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"xxx\byy"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//xxyy</span>
+
+        <span class="token comment" spellcheck="true">//\t - 制表符,相当于tab键,默认是空4格</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello\tworld"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//输出 james:"success is good boy"</span>
+
+        <span class="token comment" spellcheck="true">//双引号</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"james:\"success is good boy\""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// \ 转义含义</span>
+        <span class="token comment" spellcheck="true">//单个\</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"D:\\temp\\news"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//输出\\</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"\\\\"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><blockquote>
+<p><strong>编程的核心就是从定义变量开始</strong></p>
+<p>java语言是一个<strong>强类型的语言</strong>[在编译期间必须要确定好数据的类型],javascript弱类型的语言</p>
+<p>变量的本质 - “内存中某块区域的名称”,编程的任务就是对数据进行crud+数据分析的操作.</p>
+<p>但是前提是数据需要先进行存储[内存,磁盘(文件,db数据库) - JVM内存</p>
+<p>“JVM对字节码文件进行解释的前奏工作 - 把这个字节码文件加载到自己的内存中,java只能操作内存中的数据”</p>
+<p>java中是如何定义和存储简单的这些数据呢?</p>
+<p><strong>就是通过数据类型以及变量来定义和存储的.</strong></p>
+</blockquote>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><blockquote>
+<p>java中的数据类型有两大块</p>
+<ol>
+<li><p><strong>基本数据类型(8种)</strong> - 编程思想中将void归纳为第9种</p>
+<p>数据类型决定了存储数据的这块空间的大小,并且这个大小一旦确定了,将不能够改变了.</p>
+</li>
+<li><p>对象类型(无数种)</p>
+<p>2-1. 内置对象类型 - System,String - Jdk中提供的类</p>
+<p>2-2. 自定义对象类型 - 自己定义的那些类HelloWorld,SignDemo</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="八种基本数据类型"><a href="#八种基本数据类型" class="headerlink" title="八种基本数据类型"></a>八种基本数据类型</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>名称</th>
+<th>大小</th>
+<th>范围</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>字节</td>
+<td>占1个字节8bit</td>
+<td>-128~127</td>
+<td>0</td>
+</tr>
+<tr>
+<td>short</td>
+<td>短整型</td>
+<td>占2个字节16bit</td>
+<td>-2^15~2^15-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>int</td>
+<td>整型</td>
+<td>占4个字节32bit</td>
+<td>-2^31~2^31-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>长整型</td>
+<td>占8个字节64bit</td>
+<td>-2^63~2^63-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>float</td>
+<td>单精度浮点数</td>
+<td>占4个字节32bit</td>
+<td>+-(3.4*10^38)</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>double</td>
+<td>双精度浮点数</td>
+<td>占8个字节64bit</td>
+<td>+-(1.798*10^308)</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>char</td>
+<td>字符</td>
+<td>占2个字节16bit</td>
+<td>0~65535</td>
+<td>‘\u0000’空格</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>布尔类型</td>
+<td>占1个字节8bit</td>
+<td>true/false</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<h2 id="变量的定义"><a href="#变量的定义" class="headerlink" title="变量的定义"></a>变量的定义</h2><blockquote>
+<p>变量的命名的规范请你参考类的命名规范,除了类的命名采用的”大驼峰”,而变量命名采用的是”小驼峰”</p>
+<p>“小驼峰” - 首字母小写,其余每个单词的首字母大写.比如<strong>studentAge</strong></p>
+</blockquote>
+<p><code>语法</code></p>
+<pre class="line-numbers language-java"><code class="language-java">数据类型 变量名 <span class="token punctuation">[</span><span class="token operator">=</span> 变量值<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="剖析变量的背后"><a href="#剖析变量的背后" class="headerlink" title="剖析变量的背后"></a>剖析变量的背后</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> tech<span class="token punctuation">.</span>aistar<span class="token punctuation">.</span>day01<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 本类用来演示: 变量入门
+ *
+ * @author: success
+ * @date: 2021/7/15 3:43 下午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">VarDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//数据类型 变量名 [= 变量值];</span>
+        <span class="token keyword">byte</span> b <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//代码的背后 - 埋了个"种子","发芽"</span>
+
+        <span class="token comment" spellcheck="true">//1. 数据肯定是存储在JVM内存中的</span>
+        <span class="token comment" spellcheck="true">//2. 定义在方法内部的变量 - 局部变量[JVM的栈区]</span>
+        <span class="token comment" spellcheck="true">//3. 局部变量的生命周期是伴随着方法(main)的调用的开始和结束</span>
+
+        <span class="token comment" spellcheck="true">//讲解的本质</span>
+        <span class="token comment" spellcheck="true">//流程</span>
+        <span class="token comment" spellcheck="true">//1. JVM加载VarDemo.class到内存</span>
+        <span class="token comment" spellcheck="true">//2. JVM找到main方法想要去执行里面的程序</span>
+        <span class="token comment" spellcheck="true">//3. 此处需要申请一块区域来保存数据10</span>
+        <span class="token comment" spellcheck="true">//   3-1. 区域的大小由前面的数据类型来决定的 - int类型 - 区域4个字节32bit的大小</span>
+        <span class="token comment" spellcheck="true">//   3-2. 栈里面的区域的大小一旦被确定了,就不能改变 - 肯定有的时候会有内存的浪费</span>
+        <span class="token comment" spellcheck="true">//   3-3. 虽然空间浪费了,但是读取的效率会提高 - 典型的"以空间换时间"</span>
+
+        <span class="token comment" spellcheck="true">//4. 只要是内存中的空间,这个空间必然会有一个地址,所以变量的存在是为了给这个区域取了个名字</span>
+        <span class="token comment" spellcheck="true">//   变量是为了方便用户来通过它访问到这个空间中存储的具体的那个值的</span>
+
+        <span class="token comment" spellcheck="true">//把整数10赋值给一个int类型的变量a</span>
+        <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// == 比较的就是"坑 - 区域"里面存储的数据</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b <span class="token operator">==</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h1><blockquote>
+<p>常识规定</p>
+<p>a. java中看到一个整数,默认就是int类型</p>
+<p>b. java中看到一个小数,默认就是double类型</p>
+<p>c. 大的数据类型和小的数据类型进行计算的时候,计算得到的结果是偏向类型大的一方.</p>
+</blockquote>
+<blockquote>
+<ol>
+<li><p>自动转换</p>
+<p>小的数据类型可以自动转换成大的数据类型.</p>
+<p><strong>byte-&gt;short-&gt;int-&gt;long</strong></p>
+<p><strong>char-&gt;int</strong></p>
+<p><strong>int-&gt;double</strong></p>
+</li>
+<li><p>强制类型转换</p>
+<p>大的数据类型转换成小的数据类型的时候,需要进行强制类型转换的操作</p>
+<pre class="line-numbers language-java"><code class="language-java">MaxType 变量<span class="token number">1</span> <span class="token operator">=</span> 值<span class="token number">1</span><span class="token punctuation">;</span>
+
+MinType 变量<span class="token number">2</span> <span class="token operator">=</span> <span class="token punctuation">(</span>MinType<span class="token punctuation">)</span>变量<span class="token number">1</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>隐式转换</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">int</span><span class="token operator">-</span><span class="token operator">></span><span class="token keyword">long</span>
+整数后面添加l<span class="token operator">/</span>L
+     
+<span class="token keyword">double</span><span class="token operator">-</span><span class="token operator">></span><span class="token keyword">float</span>
+小数后面加上f<span class="token operator">/</span>F
+     
+推荐在<span class="token keyword">double</span>后面加上d<span class="token operator">/</span>D <span class="token operator">-</span> 提高语义
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">码农耕地人</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2021/08/02/java%E5%85%A5%E9%97%A8/">http://example.com/2021/08/02/java%E5%85%A5%E9%97%A8/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">码农耕地人</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/java%E5%85%A5%E9%97%A8/">
+                                    <span class="chip bg-color">java入门</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/08/04/%E5%8F%98%E9%87%8F/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="变量">
+                        
+                        <span class="card-title">变量</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java%E5%85%A5%E9%97%A8/" class="post-category">
+                                    java入门
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">java入门</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07/13/hexo-hello/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="hexo-hello">
+                        
+                        <span class="card-title">hexo-hello</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录
+            </div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fas fa-list-ul"></i>
+        </a>
+    </div>
+    
+
+        <script src="/libs/tocbot/tocbot.min.js"></script>
+        <script>
+            $(function () {
+                tocbot.init({
+                    tocSelector: '#toc-content',
+                    contentSelector: '#articleContent',
+                    headingsOffset: -($(window).height() * 0.4 - 45),
+                    collapseDepth: Number('0'),
+                    headingSelector: 'h2, h3, h4'
+                });
+
+                // modify the toc link href to support Chinese.
+                let i = 0;
+                let tocHeading = 'toc-heading-';
+                $('#toc-content a').each(function () {
+                    $(this).attr('href', '#' + tocHeading + (++i));
+                });
+
+                // modify the heading title id to support Chinese.
+                i = 0;
+                $('#articleContent').children('h2, h3, h4').each(function () {
+                    $(this).attr('id', tocHeading + (++i));
+                });
+
+                // Set scroll toc fixed.
+                let tocHeight = parseInt($(window).height() * 0.4 - 64);
+                let $tocWidget = $('.toc-widget');
+                $(window).scroll(function () {
+                    let scroll = $(window).scrollTop();
+                    /* add post toc fixed. */
+                    if (scroll > tocHeight) {
+                        $tocWidget.addClass('toc-fixed');
+                    } else {
+                        $tocWidget.removeClass('toc-fixed');
+                    }
+                });
+
+        
+                    /* 修复文章卡片 div 的宽度. */
+                    let fixPostCardWidth = function (srcId, targetId) {
+                        let srcDiv = $('#' + srcId);
+                        if (srcDiv.length === 0) {
+                            return;
+                        }
+
+                        let w = srcDiv.width();
+                        if (w >= 450) {
+                            w = w + 21;
+                        } else if (w >= 350 && w < 450) {
+                            w = w + 18;
+                        } else if (w >= 300 && w < 350) {
+                            w = w + 16;
+                        } else {
+                            w = w + 14;
+                        }
+                        $('#' + targetId).width(w);
+                    };
+
+                    // 切换TOC目录展开收缩的相关操作.
+                    const expandedClass = 'expanded';
+                    let $tocAside = $('#toc-aside');
+                    let $mainContent = $('#main-content');
+                    $('#floating-toc-btn .btn-floating').click(function () {
+                        if ($tocAside.hasClass(expandedClass)) {
+                            $tocAside.removeClass(expandedClass).hide();
+                            $mainContent.removeClass('l9');
+                        } else {
+                            $tocAside.addClass(expandedClass).show();
+                            $mainContent.addClass('l9');
+                        }
+                        fixPostCardWidth('artDetail', 'prenext-posts');
+                    });
+        
+    });
+        </script>
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">码农耕地人</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">336.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zhugefeng/zhugefeng.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:156035828@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=156035828" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 156035828" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/xxx" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/xxx" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"left"},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+
+</html>

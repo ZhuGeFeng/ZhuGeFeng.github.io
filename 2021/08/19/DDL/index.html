@@ -1,0 +1,2637 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="DDL-DML, 码农耕地人">
+    <meta name="description" content="码农耕地人">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>DDL-DML | 码农耕地人</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="码农耕地人" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+<!-- 雪花特效 -->
+
+
+<script type="text/javascript" src="/libs/others/sakura.js"></script>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">码农耕地人</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">码农耕地人</div>
+        <div class="logo-desc">
+            
+            码农耕地人
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">DDL-DML</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255, 0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+        opacity: 0.7;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        /* -    padding-bottom: 30px; */
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/MySQL/">
+                                <span class="chip bg-color">MySQL</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/mysql/" class="post-category">
+                                mysql
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-08-19
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    32 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h1><blockquote>
+<p>DDL[Data Definition Language] - 数据定义语言</p>
+<p>涉及到的sql命令如下:</p>
+<ol>
+<li><p><strong>create命令 - 创建</strong></p>
+<p><strong>创建表(table)</strong>,视图(view),用户(user),函数(function),存储过程(procedure),数据库[database],约束(constraints)</p>
+<p>以上构建的都是属于数据库DB的对象/单位 - DB的基本单位是table</p>
+</li>
+<li><p><strong>drop命令 - 删除</strong></p>
+<p><strong>删除表(table),视图(view),用户(user),函数(function),存储过程(procedure),数据库[database]</strong>,约束[constraints]</p>
+<p>但是不能够删除表中具体行记录,是由delete命令</p>
+</li>
+<li><p>alter命令 - 修改 - 了解即可</p>
+<p>修改列名,列的类型,修改约束.列的类型 - 使用情况很少</p>
+</li>
+<li><p>rename to - 修改表名</p>
+</li>
+<li><p>comment - 创建列的时候加上注释</p>
+</li>
+<li><p>truncate - 清空整张表</p>
+</li>
+</ol>
+</blockquote>
+<h1 id="ORM思想"><a href="#ORM思想" class="headerlink" title="ORM思想"></a>ORM思想</h1><blockquote>
+<p><strong>Obejct-Relational-Mapping - 对象关系映射</strong></p>
+<p>需要用到OO思想[第一步找出对象,分析对象的属性,分析对象的功能.考虑对象之间的关系]来进行实体类的设计 - 数据库的设计.</p>
+<p><strong>掌握目标 - 看到实体类-表结构.看到表结构-实体类.</strong></p>
+<p>映射规则:</p>
+<ol>
+<li><p>实体名 - 表名</p>
+</li>
+<li><p>对象标识(id) - 主键(id) -primary key - [特点,非空且唯一]</p>
+</li>
+<li><p>普通属性 - 普通列[推荐俩者的名称保持一致.需要注意的是如果列是多个名称[匈牙利] - 小驼峰]</p>
+</li>
+<li><p>对象之间的关系 - 外键(foreign key) - 表与表之间是通过<strong>外键</strong>来进行关联[进行关联查询的基础]</p>
+<p><strong>通常情况下某张表的外键是指向另外一张表的主键的.</strong></p>
+</li>
+</ol>
+</blockquote>
+<h2 id="对象之间的关系"><a href="#对象之间的关系" class="headerlink" title="对象之间的关系"></a>对象之间的关系</h2><blockquote>
+<p>分析一个”小米商城”,利用OO思想,找出业务中的关键对象</p>
+<ul>
+<li><p>登录,注册 - “用户User对象” - (id,phone,password,login_time,login_ip)</p>
+</li>
+<li><p>个人中心 - 其中有一块是用来负责展示用户的详情UserInfo</p>
+</li>
+<li><p>产品</p>
+</li>
+<li><p>产品详情</p>
+</li>
+<li><p>购物车 - id,商品id,商品名称,商品单价,num,小计算,总价,备注</p>
+</li>
+<li><p>订单 - 一个用户拥有多个订单,一个订单只能属于一个用户</p>
+</li>
+<li><p>产品分类表</p>
+<p>1:N</p>
+<p>N:N</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="1-1"><a href="#1-1" class="headerlink" title="1:1"></a>1:1</h3><blockquote>
+<p>User和UserInfo: 一个用户匹配一个用户详情,一个用户详情仅属于一个用户</p>
+<p>强调的是平等性 - 表设计中,外键可以出现在任何一方表中.</p>
+<p>原则 - 能用单向关联解决的业务就不要使用双向关联.</p>
+</blockquote>
+<blockquote>
+<ol>
+<li><p>java实体类</p>
+<pre class="line-numbers language-java"><code class="language-java">现阶段的思想 <span class="token operator">-</span> 实体类中没有外键的概念<span class="token punctuation">.</span>
+<span class="token operator">--</span> 关系具有方向性
+<span class="token operator">--</span> 单向关联 <span class="token operator">-</span> 关系的维护仅仅在其中一方存在<span class="token punctuation">.</span>
+<span class="token operator">--</span> 根据第一表进行设计
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">{</span>
+  <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
+           
+  <span class="token keyword">private</span> String phone<span class="token punctuation">;</span>
+           
+  <span class="token keyword">private</span> String password<span class="token punctuation">;</span>
+           
+  <span class="token comment" spellcheck="true">//一个用户拥有一个用户详情对象</span>
+  <span class="token keyword">private</span> UserInfo userInfo<span class="token punctuation">;</span>
+           
+  <span class="token comment" spellcheck="true">//现阶段 - 千万不要写成 - 对象里面是没有外键的概念的</span>
+  <span class="token comment" spellcheck="true">//private Integer user_info_id;</span>
+<span class="token punctuation">}</span>
+         
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserInfo</span><span class="token punctuation">{</span>
+  <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
+           
+  <span class="token keyword">private</span> String header<span class="token punctuation">;</span>
+           
+  <span class="token keyword">private</span> Gender sex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+   
+
+<span class="token operator">--</span> 单向关联 <span class="token operator">-</span> 第二张表
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">{</span>
+  <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
+  
+  <span class="token keyword">private</span> String phone<span class="token punctuation">;</span>
+              
+  <span class="token keyword">private</span> String password<span class="token punctuation">;</span>
+ 
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserInfo</span><span class="token punctuation">{</span>
+  <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
+  
+  <span class="token keyword">private</span> String header<span class="token punctuation">;</span>
+              
+  <span class="token keyword">private</span> Gender sex<span class="token punctuation">;</span>
+              
+  <span class="token keyword">private</span> User user<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token operator">--</span> ORM思想的精髓 <span class="token operator">-</span> 如何进行映射以及为什么需要这种思想<span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span>
+  
+未来的操作 <span class="token operator">-</span> java代码去连接db <span class="token operator">-</span> 查询user表中所有的数据 <span class="token operator">-</span><span class="token operator">></span> List<span class="token operator">&lt;</span>User<span class="token operator">></span>
+取出每一行数据 <span class="token operator">-</span> 创建一个user对象<span class="token punctuation">[</span>数据在内存中的载体<span class="token punctuation">.</span>对象特殊类型的数组<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true">//db中的每一行数据 - java代码来进行获取</span>
+List<span class="token operator">&lt;</span>User<span class="token operator">></span> users <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+循环体中<span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//jdbc代码</span>
+  Integer id <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  String phone <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  String passwrod <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment" spellcheck="true">//使用对象来封装每一行数据</span>
+  User user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span>phone<span class="token punctuation">,</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  users<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//未来学习了前端 - 后台list集合中的数据显示到网页上.</span>
+
+
+<span class="token operator">--</span> 双向关联 <span class="token operator">-</span> 彼此之间相互维护
+ <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">{</span>
+  <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
+  
+  <span class="token keyword">private</span> String phone<span class="token punctuation">;</span>
+              
+  <span class="token keyword">private</span> String password<span class="token punctuation">;</span>
+                
+  <span class="token keyword">private</span> UserInfo userInfo<span class="token punctuation">;</span>
+ 
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserInfo</span><span class="token punctuation">{</span>
+  <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
+  
+  <span class="token keyword">private</span> String header<span class="token punctuation">;</span>
+              
+  <span class="token keyword">private</span> Gender sex<span class="token punctuation">;</span>
+              
+  <span class="token keyword">private</span> User user<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>表设计</p>
+<p><img src="/2021/08/19/DDL/onetoone01.png"> </p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>​        <img src="/2021/08/19/DDL/onetoone02.png"> </p>
+</blockquote>
+<h3 id="1-N"><a href="#1-N" class="headerlink" title="1:N"></a>1:N</h3><blockquote>
+<p>一个用户对象和购物车对象</p>
+<p>一个用户可以拥有多个购物车对象,但是一个购物车对象只能属于一个用户.</p>
+<p><strong>外键是存储在多的一方</strong></p>
+<p><code>实体类</code></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token operator">--</span> 单向关联<span class="token number">01</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//普通属性</span>
+
+<span class="token comment" spellcheck="true">//一个用户拥有多个购物车</span>
+<span class="token keyword">private</span> Set<span class="token operator">&lt;</span>Cart<span class="token operator">></span> carts<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Cart</span><span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//...</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token operator">--</span> 单向关联<span class="token number">02</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//普通属性</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Cart</span><span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//...</span>
+
+<span class="token comment" spellcheck="true">//一个购物车只能属于一个用户</span>
+<span class="token keyword">private</span> User user<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+
+
+<span class="token operator">--</span> 双向关联
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//普通属性</span>
+
+<span class="token comment" spellcheck="true">//一个用户拥有多个购物车</span>
+<span class="token keyword">private</span> Set<span class="token operator">&lt;</span>Cart<span class="token operator">></span> carts<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Cart</span><span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//...</span>
+
+<span class="token keyword">private</span> User user<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>表结构</code></p>
+<p>User表</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>phone</th>
+<th>password</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>110</td>
+<td>123</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>114</td>
+<td>123</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>115</td>
+<td>123</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>购物车Cart表</p>
+<table>
+<thead>
+<tr>
+<th>2</th>
+<th>2</th>
+<th>mi02</th>
+<th>1</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+<td>mi01</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>mi03</td>
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>mi04</td>
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>product_id</td>
+<td>product_name</td>
+<td>user_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>mi05</td>
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</blockquote>
+<h3 id="N-N"><a href="#N-N" class="headerlink" title="N:N"></a>N:N</h3><blockquote>
+<p>需要拆分成俩个一对多</p>
+</blockquote>
+<blockquote>
+<p>一个学生可以选择多门课程,</p>
+<p>一门课程可以被多个学生去选择.</p>
+<p>比如:客户表,商品表,购买表</p>
+<p>一个客户拥有多个商品</p>
+<p>一个商品可以被多个用户购买.</p>
+<p>customer表</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>cname</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>admin</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>tom</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>product表</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>pname</th>
+<th>price</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>mac</td>
+<td>100000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>xiaomi</td>
+<td>8000</td>
+</tr>
+<tr>
+<td>3</td>
+<td>huawei</td>
+<td>8000</td>
+</tr>
+<tr>
+<td>4</td>
+<td>联想</td>
+<td>7000</td>
+</tr>
+</tbody></table>
+</blockquote>
+<blockquote>
+<p>需要建立第三方表,来确定customer表和product表的关系 . <strong>N:N-&gt;拆分成俩个1:N</strong></p>
+<p>purcase表 - 购买表 </p>
+<p>采用的是联合主键[<strong>组合主键]</strong> </p>
+<p><strong>主键-primary key - 非空且唯一.作用:用来确定唯一元组[行]</strong></p>
+<p>所谓的”俩个1:n” - <strong>customer表和purcase表</strong>以及<strong>product表和purcase表</strong></p>
+<ol>
+<li>一个客户拥有多条购买记录[1:N]</li>
+<li>一个产品拥有多条被购买记录[1:N]</li>
+</ol>
+<p>主键列未必是单列[常见的id列] , N:N场景可以采取联合主键,主键列由俩列共同组成**(customer_id,product_id)**</p>
+<p><strong>外键列通常情况是引入另外一张表的主键列.在该表中.外键列有2列</strong></p>
+<p><strong>分别是customer_id 引用了customer表中的id列</strong></p>
+<p><strong>product_id引用了product表中的id列</strong></p>
+<table>
+<thead>
+<tr>
+<th>customer_id</th>
+<th>product_id</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td></td>
+</tr>
+</tbody></table>
+</blockquote>
+<blockquote>
+<p>另一种情况关于主键的选择.第三方表[用来维护关系的表],开发的时候,还是推荐给这张自己一个<strong>单独的主键列</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>customer_id</th>
+<th>product_id</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>4</td>
+</tr>
+</tbody></table>
+</blockquote>
+<h3 id="自关联"><a href="#自关联" class="headerlink" title="自关联"></a>自关联</h3><blockquote>
+<p>当前表中的外键列自关联到了自己表中的主键列</p>
+</blockquote>
+<blockquote>
+<p>s_emp</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>first_name</th>
+<th>manager_id[上司id]</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Carmen</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Mark</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>tom</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>admin</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>jack</td>
+<td>2</td>
+</tr>
+</tbody></table>
+</blockquote>
+<h2 id="分析评论业务"><a href="#分析评论业务" class="headerlink" title="分析评论业务"></a>分析评论业务</h2><blockquote>
+<p>以”抖音”</p>
+<p>User - Viedo</p>
+<p>关注评论功能.一个用户可以评论多个视频.一个视频可以被多个用户进行评论  - N:N</p>
+</blockquote>
+<blockquote>
+<p>User表</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>phone</th>
+<th>password</th>
+<th>username</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>110</td>
+<td>123</td>
+<td>吴签</td>
+</tr>
+<tr>
+<td>2</td>
+<td>114</td>
+<td>123</td>
+<td>霍针</td>
+</tr>
+<tr>
+<td>3</td>
+<td>115</td>
+<td>123</td>
+<td>孙岩</td>
+</tr>
+</tbody></table>
+</blockquote>
+<blockquote>
+<p>Viedo表</p>
+<p>一个用户可以发布多个视频,但是一个视频只能由一个用户去发布</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>视频标题</th>
+<th>视频点赞量</th>
+<th>user_id</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>吴签</td>
+<td>100万+</td>
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>霍针</td>
+<td>100万+</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>杨晓轩</td>
+<td>10+</td>
+<td>3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>孙岩</td>
+<td>10+</td>
+<td>3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>闫昊</td>
+<td>10+</td>
+<td>3</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</blockquote>
+<blockquote>
+<p>评论表 - 重点 体现出谁评论了哪个视频即可.comment</p>
+<p>外键列是可以为空的</p>
+<p>id=5的人并不是直接对视频进行评论的 - 属于第二层评论,他是对id=1的这个人进行评论的</p>
+<p>若comment_id为null,说明这个人是直接对视频进行评论的,属于业务的第一级评论</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>视频id</th>
+<th>user_id</th>
+<th>评论内容</th>
+<th>comment_pid</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>很羡慕</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>渣男</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+<td>渣男</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>彼此彼此</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>5</td>
+<td>你还是人么?你这样认为</td>
+<td>1</td>
+<td></td>
+</tr>
+</tbody></table>
+</blockquote>
+<p><img src="/2021/08/19/DDL/reply.png"> </p>
+<p>除了评论还有回复….</p>
+<p>第一层 - 属于评论表的数据</p>
+<p>第二层 - 对第一级的评论继续评论</p>
+<p>第三层 - 对第二层及其以后的评论/回复 - 叫做回复.</p>
+<blockquote>
+<p>回复表</p>
+<p>一条评论可以引起多个回复 - reply</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>comment_id</th>
+<th>content</th>
+<th>replay_id</th>
+<th>user_id</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>5</td>
+<td>难道你不羡慕吗</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>我羡慕</td>
+<td>1</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>结构:</p>
+<p>一条视频发出来id=5的视频</p>
+<p>user_id=3: 很羡慕</p>
+<p>​    user_id=5:你还是人么?你这样认为</p>
+<p>​        user_id=1回复了user_id=5:难道你不羡慕吗</p>
+<p>​        user_id=2回复了user_id=1:我羡慕</p>
+</blockquote>
+<h1 id="表设计-三大范式"><a href="#表设计-三大范式" class="headerlink" title="表设计-三大范式"></a>表设计-三大范式</h1><blockquote>
+<p>表设计一定<strong>尽可能去遵守三大方式</strong>.作用:指导db的设计更加合理化,避免数据的冗余.</p>
+<p>笔试题中简答题.</p>
+<ol>
+<li><p><strong>1NF(第一范式):保证列的原子性.列不可再分割.</strong></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token function">s_emp</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+但是发现外国的name比较特殊<span class="token punctuation">.</span>发现name列是可再分割的<span class="token punctuation">.</span>不符合1NF<span class="token punctuation">.</span>需要对name进行切割
+<span class="token function">s_emp</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span>first_name<span class="token punctuation">,</span>last_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+address只需要包含省市区
+<span class="token function">school</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span>name<span class="token punctuation">,</span>address<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">1</span>  苏州大学          江苏省苏州市工业园区
+<span class="token number">2</span>  常州大学          江苏省常州市武进区
+<span class="token number">3</span>  苏州科技学院  江苏省苏州市高新区
+
+<span class="token function">school</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span>name<span class="token punctuation">,</span>province<span class="token punctuation">,</span>city<span class="token punctuation">,</span>area<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>2NF(第二范式):基于1NF,不存在非关键列部分依赖于关键列.非关键列要全部依赖于关键列</strong></p>
+<p><code>关键列 - 主键列;非关键列 - 非主键列</code></p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">-- student,course表 - 所有的信息合并到一张表了.
+--1. student信息以及course信息都会存在数据的冗余性
+-- 如何确定主键列[单列,组合形式] - 能够确定唯一的一条行记录 - sid,cid
+
+-- db设计中,并不是表的数量或者列的数量越少越好的 - 满足三大范式
+-- 关键列(sid,cid),非关键列(sname,cname)
+-- ①(sid,cid) -> 唯一确定 sname
+         实际上如果关键列中的部分列sid就可以确定了sname的值
+         sname只需要由关键列(sid,cid)中的部分列[也就是sid列]就可以确定了.
+         存在了非关键列sname部分依赖于关键列,违背了2NF
+-- ②(sid,cid) -> 唯一确定 cname
+student_course(sid,sname,cid,cname)
+sid  sname  cid  cname
+1     tom    1    java
+1     tom    2    python
+2     admin  1    java
+2     admin  3    jack
+
+为了满足2NF
+student(sid,sname);//学生表 sid->sname
+course(cid,cname);//课程表  cid->cname
+sc(sid,cid,score);//选课表  (sid,cid)-> score
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>3NF(第三范式):基于2NF.不存在非关键列传递依赖于关键列.所有的非关键列要直接依赖于关键列</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">student(id,sname,uno,uname,address)
+1  tom   x1001  苏州大学 江苏省
+2  jack  x1002  社会大学 东北省
+3  james x1001  苏州大学 江苏省
+   
+关键列只有id列
+①关键列id可以直接确定一个唯一的uno的
+②uno又可以直接确定唯一的一个uname
+③给定一个学生的id,也是可以确定一个唯一的uname
+   
+id -> uno -> uname  => id -> uname
+uname是间接被id确定下来的-uname是间接依赖[通过一个uno传递依赖]于关建列id.
+违背了3NF,存在了非关键列传递依赖于关键列.
+   
+所有的非关键列要直接依赖于关键列 - 所有的非关键列应该是直接被关键列来确定的.
+   
+修改 - 拆分
+student(id,sname,uid);//uid就是大学的id
+id -> uid(引用university表中的id列)
+   
+university(id,uno,uname,adress)
+uid->uname
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<h1 id="建表"><a href="#建表" class="headerlink" title="建表"></a>建表</h1><pre class="line-numbers language-mysql"><code class="language-mysql">CREATE TABLE 表名(
+  列名 数据类型[(长度)],
+  列2  数据类型[(长度)],
+  ...
+  ...
+  列  数据类型[(n)]
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- mysql5.7及其以上可以省略了ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- 前提是my.ini文件配置好了
+-- 指定我们的数据的存储引擎InnoDB,表编码是utf8
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><blockquote>
+<p>列的数据类型就是用来限制你将来插入数据到该列的限制.该列是什么类型,就需要插入什么类型的数据</p>
+</blockquote>
+<blockquote>
+<ol>
+<li><p>数字相关的</p>
+<p>a. 整数 - int和bigint</p>
+<p>b. 小数 - float,double[使用最多],decimal</p>
+<p>笔试题中:TINYINT(1个字节)或者smallint(2个字节)</p>
+</li>
+<li><p>字符串相关的 - mysql中字符串是用单引号表示的</p>
+<p>a. char(n)    -  固定长度 - 0-255 bytes[ascill]</p>
+<p>b. varchar(n) - 可变长度 - 0-65535 bytes[unicode的范围]</p>
+<p>c. text - 长文本数据</p>
+<p>笔试题中:mysql中char和varchar的区别</p>
+<pre class="line-numbers language-MYSQL"><code class="language-MYSQL">数字5代表的是该列可以存储的字符串的个数.不是代表字节数
+char(5) - 定长字符的意思是即时该列仅仅保存一个字母'a',那么在内存中,char的实际消耗的长度就是5个 - "浪费"
+                    对char类型的列的读写操作效率高于varchar
+                    
+varchar(5) - 可变长度[最大可保存的字符串的长度],实际存储了一个字母'a'.实际也就只消耗了一个1长度 - "节约了内存" - 按需分配.
+
+因此,开发中尽可能字符串使用varchar,而不使用char.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>日期</p>
+<p>a. date -&gt; 即使保存的是年月日时分秒,查询出来的也仅仅只会显示到<strong>年月日</strong></p>
+<p>b. datetime-&gt;年月日时分秒.即使保存的数据仅仅是年月日.但是查询出来的时候,可以显示年月日时分秒</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="建表demo"><a href="#建表demo" class="headerlink" title="建表demo"></a>建表demo</h2><pre class="line-numbers language-mysql"><code class="language-mysql">drop table tbl_product;
+create table tbl_product(
+    id int(3),
+  name varchar(20),
+  create_time date,
+  price double(10,2)
+);
+
+-- 分析括号中的参数
+-- int(3)-并不会影响该列可插入数据的一个范围.范围仍然是int型的范围
+-- 为了看出来int(3),修改一下建表语句
+-- int(13)想要看出来效果,这个列一定要加上zerofill,不足位数的用0填充
+create table tbl_product(
+    id int(13) zerofill,
+  name varchar(20),
+  create_time date,
+  price double(7,2)
+);
+mysql> insert into tbl_product values(1234,'tom',now(),123.45);
+mysql> select * from tbl_product;
++---------------+------+-------------+--------+
+| id            | name | create_time | price  |
++---------------+------+-------------+--------+
+| 0000000001234 | tom  | 2021-08-19  | 123.45 |
++---------------+------+-------------+--------+
+总结:int(n)此处的n不会影响插入到该列的数据的大小.那么n是配合zerofill来进行的.查询的时候,不足n位的数字全部用0填充.
+
+-- 修改表结构-测试varchar(n)中的n - 个数
+create table tbl_product(
+    id int(7),
+  name varchar(2),
+  create_time date,
+  price double(10,2)
+);
+-- 如果varchar(n)设置成了2,但是插入了'tom',报错
+-- ERROR 1406 (22001): Data too long for column 'name' at row 1
+mysql> insert into tbl_product values(1,'tom',now(),123.45);
+-- 总结:varchar(n) - 中的n是代表的是字符的个数[一个汉字就是代表一个]
+
+-- double(m,n)
+-- m代表的是总长度,n代表的是精度 - double(7,2)
+create table tbl_product(
+    id int(7),
+  name varchar(20),
+  create_time date,
+  price double(7,1)
+);
+mysql> insert into tbl_product values(2,'admin','2021-10-01',123456.56789);
+-- double(7,2) -> 7就是总的长度,2代表的精度[四舍五入] - 123456.56789 
+-- 插入失败了 - Out of range value for column 'price' at row 1
+-- 插入失败的原因是123456.57 -> 这个结果已经超过了总的长度7了.
+
+-- 修改double(7,1) -> 123456.56789 -> 123456.6 -> 仍然没有超过7这个总的长度的. - 可以被插入进去的
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-mysql"><code class="language-mysql">mysql> show tables;
+mysql> desc tables;
+-- 查看建表语句
+mysql> show create table tbl_product
+
+ CREATE TABLE `tbl_product` (
+   `id` int(7) DEFAULT NULL,
+   `name` varchar(20) DEFAULT NULL,
+   `create_time` date DEFAULT NULL,
+   `price` double(3,2) DEFAULT NULL
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h2><blockquote>
+<ol>
+<li><p>在不考虑有外键因素的情况下,可以直接删除表的</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">DROP TABLE 表名;
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<h1 id="约束constraint"><a href="#约束constraint" class="headerlink" title="约束constraint"></a>约束constraint</h1><blockquote>
+<p>作用:在插入到表中列的数据进行进一步的限制</p>
+</blockquote>
+<h2 id="约束类型"><a href="#约束类型" class="headerlink" title="约束类型"></a>约束类型</h2><blockquote>
+<ol>
+<li>主键约束[primary key] - 非空且唯一.用来确定唯一的一行记录 - pk</li>
+<li>非空约束[not null] - 非空 - 该列不能为null.必须插入值或者给定一个默认值 - nn</li>
+<li>唯一约束[unique] - 唯一性 - nq</li>
+<li>外键约束[foreign key] - 表与表之间的关系是通过外键来进行维护的.外键列一般是对应某张表的主键列.可以允许为null  - fk</li>
+</ol>
+</blockquote>
+<h3 id="列级添加"><a href="#列级添加" class="headerlink" title="列级添加"></a>列级添加</h3><blockquote>
+<p>优点:比较简单,缺点:不能给约束取名字</p>
+<p>语法:</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">CREATE TABLE 表名(
+列名 数据类型[(长度)] [约束类型1],
+列2  数据类型[(长度)] [约束类型2],
+...
+...
+列  数据类型[(n)]
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-mysql"><code class="language-mysql">drop table tbl_product;
+create table tbl_product(
+    id int(7) primary key comment '产品的id',
+-- 给某列增加俩个约束,用空格隔开
+name varchar(20) not null unique comment '产品的名称',
+-- 如果该列没有插入数据,则使用default给定的默认值
+create_date date not null default now(),
+-- 非空
+price double(7,2) not null
+);
+
+-- 死记住
+-- 如果上面的create_date使用的是date,给定默认值的时候,是不能直接使用now()函数的.如果想要给定默认值是now(),那么这个列必须是datetime
+-- 修改date类型列的默认值
+drop table tbl_product;
+create table tbl_product(
+    id int(7) primary key comment '产品的id',
+-- 给某列增加俩个约束,用空格隔开
+name varchar(20) not null unique comment '产品的名称',
+-- 如果该列没有插入数据,则使用default给定的默认值
+create_date date not null default '2019-01-01',
+-- 非空
+price double(7,2) not null
+);
+
+-- 演示primary key
+insert into tbl_product(id,name,price) values(1,'tom',123.567);
+
+mysql> select * from tbl_product;
++----+------+-------------+--------+
+| id | name | create_date | price  |
++----+------+-------------+--------+
+|  1 | tom  | 2019-01-01  | 123.57 |
++----+------+-------------+--------+
+
+-- 继续插入一个id也是1的值
+insert into tbl_product(id,name,price) values(1,'admin',123.567);
+ERROR 1062 (23000): Duplicate entry '1' for key 'PRIMARY'
+-- 违背了primary key主键约束的规则 - 重复了.
+
+-- not null
+-- 没有给price插入值,但是该列存在一个not null非空约束
+insert into tbl_product(id,name) values (2,'tom');
+-- ERROR 1364 (HY000): Field 'price' doesn't have a default value
+
+-- unique 唯一性,表中已经存在了一行记录是tom
+insert into tbl_product(id,name,price) values(2,'tom',12.3);
+-- name字段/列值重复了.
+ERROR 1062 (23000): Duplicate entry 'tom' for key 'name'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h3 id="表级添加"><a href="#表级添加" class="headerlink" title="表级添加"></a>表级添加</h3><blockquote>
+<p>优势可以给约束命名,记住列级添加是不支持给列取名称的</p>
+<p>not null非空约束以及default仅仅是支持列级添加的方式</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">CREATE TABLE 表名(
+列名 数据类型[(长度)],
+列2  数据类型[(长度)],
+...
+...
+列  数据类型[(n)],
+[constraint 约束名称] 约束类型(列)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-mysql"><code class="language-mysql">drop table tbl_product;
+create table tbl_product(
+    id int(7) comment '产品的id',
+-- 给某列增加俩个约束,用空格隔开
+name varchar(20) not null comment '产品的名称',
+-- 如果该列没有插入数据,则使用default给定的默认值
+create_date date not null default '2019-01-01',
+-- 非空
+price double(7,2) not null,
+
+-- 给列添加约束
+-- 约束命名 - 表名_列名_约束类型缩写
+constraint tbl_product_id_pk primary key(id),
+constraint tbl_product_name_uq unique(name)
+);
+
+insert into tbl_product values(1,'tom',now(),1223.3);
+-- 让name违背了unique约束
+insert into tbl_product values(2,'tom',now(),14.56);
+
+-- for key '约束名称',如果采用的是列添加.系统会默认给定一个约束名称[就是列的名称]
+-- 默认的约束名='name'和给定的约束名称'tbl_product_name_uq'
+-- 自定义的约束名称 - 精确定位错误的位置
+ERROR 1062 (23000): Duplicate entry 'tom' for key 'tbl_product_name_uq'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h2 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h2><blockquote>
+<p>foreign key - 简称fk.用来确定表之间的关系的.外键通常是是在多的一方.</p>
+<ol>
+<li><p>1:N或者1:1</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">drop table tbl_user;
+create table tbl_user(
+  id int(7) primary key,
+  username varchar(20) not null unique
+);
+insert into tbl_user values(1,'tom');
+insert into tbl_user values(2,'admin');
+
+drop table tbl_video;
+create table tbl_video(
+    id int(7) primary key,
+  title varchar(20),
+  likes int(7),
+  create_time datetime default now(),
+  -- 外键列命名方式 表名_另外一张表的引用列名[主键列]
+  -- 外键列的数据类型和长度和你引用的地方保持一致
+  tbl_user_id int(7),
+  -- 表级添加
+  constraint tbl_video_table_user_id_fk foreign key(tbl_user_id) references tbl_user(id)
+);
+-- 一旦创建了约束,插入数据的时候需要注意的是.
+-- 外键列是允许为空的.
+insert into tbl_video values(1,'学好myql',100,now(),1);
+insert into tbl_video values(2,'学好java',100,now(),1);
+insert into tbl_video values(3,'学习jdbc',100,now(),2);
+
+-- 注意.既然已经定义了外键的约束.那么插入数据的时候,引用的外键列的值在另外一张表中一定要有行记录的
+-- tbl_user表中是不存在id=3的行记录的
+insert into tbl_video values(3,'mysql太简单了',100,now(),3);
+
+-- 报错
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`j03s`.`tbl_video`, CONSTRAINT `tbl_video_table_user_id_fk` FOREIGN KEY (`tbl_user_id`) REFERENCES `tbl_user` (`id`))
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li><p>N:N</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">-- 评论表
+-- 一个用户可以对多个视频进行评论
+-- 一个视频可以被多个用户进行评论
+-- 拆分成俩个1:N
+
+-- 组合主键 + 列级添加
+drop table tbl_comment;
+create table tbl_comment(
+  -- 组合主键 - 分别给俩个列都去定义了主键列 - 抛出错误ERROR 1068 (42000): Multiple primary key defined
+  -- 认为这张表中存在俩个主键,这是不允许的.
+    user_id int(7) references tbl_user(id),
+  video_id int(7) references tbl_video(id),
+  content varchar(50),
+  -- 组合主键的正确定义方式
+  constraint tbl_comemnt_pk primary key(user_id,video_id),
+  -- 外键的列级添加方式
+  comment_id int(7) references tbl_comemnt(id)
+);
+
+-- 评论表拥有独立的主键id + 外键约束(表级添加方式)
+drop table tbl_comment;
+create table tbl_comment(
+    id int(7) primary key,
+  user_id int(7),
+  video_id int(7),
+  content varchar(50),
+  comment_id int(7),
+  constraint tbl_comment_user_id_fk foreign key(user_id) references tbl_user(id),
+  constraint tbl_comment_video_id_fk foreign key(video_id) references tbl_video(id),
+  constraint tbl_comment_id_fk foreign key(comment_id) references tbl_comment(id)
+);
+insert into tbl_comment(id,user_id,video_id,content) values(1,1,1,'好的,我会学会mysql的');
+insert into tbl_comment values(2,2,1,'好的,我会学会mysql的',1);
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<h2 id="建表补充"><a href="#建表补充" class="headerlink" title="建表补充"></a>建表补充</h2><blockquote>
+<p>由一张表来构建另外一张表</p>
+<ol>
+<li><p>保留原表的表结构+数据</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">create table 表名 select语句;
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-mysql"><code class="language-mysql">drop table video_copy;
+-- 保留原表中的所有的列的数据
+create table video_copy select * from tbl_video;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-mysql"><code class="language-mysql">drop table video_copy;
+create table video_copy select id,title from tbl_video;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>保留原表的表结构 + 但是不需要原表的数据</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">drop table video_copy;
+create table video_copy select id,title from tbl_video where 1=2;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<h1 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h1><blockquote>
+<p>insert 插入数据</p>
+<p>delete 删除数据</p>
+<p>update 更新数据</p>
+</blockquote>
+<h2 id="插入语句"><a href="#插入语句" class="headerlink" title="插入语句"></a>插入语句</h2><blockquote>
+<ol>
+<li><p>语法一:给表中所有的列添加数据</p>
+<p><strong>插入的列值要和建表语句中列顺序以及列的类型以及列的约束高度保持一致.</strong></p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">INSERT INTO 表名 VALUES(列值1,列值2,列值3,..,列值N)
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li><p>语法二:给表中的指定列插入数据</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">INSERT INTO 表名(列名1,列名2) VALUES(列值1,列值2);
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<h2 id="insert-select"><a href="#insert-select" class="headerlink" title="insert+select"></a>insert+select</h2><blockquote>
+<p><strong>insert into 表名 select 语句;</strong></p>
+<p>把查询结果的数据插入到该表中</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">-- 统计视频的被评论的用户量,并且保存到另外一张表中 video_id,comment_num
+drop table comment_aly;
+create table comment_aly(
+     video_id int(7),
+comment_num int(7)
+);
+insert into comment_aly select video_id,count(user_id) from tbl_comment group by video_id;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h1 id="auto-increment"><a href="#auto-increment" class="headerlink" title="auto_increment"></a>auto_increment</h1><blockquote>
+<p>mysql中的主键的生成策略 - 自增长策略 - auto_increment[默认的是从1开始,步长为1]</p>
+<p>oracle中的主键的生成策略 - 自增长 - sequence</p>
+<p>应用场景:以后插入的时候[除非是模拟数据],id肯定是后台自动生成 - 唯一性.</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">drop table comment_aly;
+create table comment_aly(
+id int(7) primary key auto_increment,
+     video_id int(7),
+comment_num int(7)
+);
+insert into comment_aly(video_id,comment_num) select video_id,count(user_id) from tbl_comment group by video_id;
+
+-- mysql中提供了一个函数last_insert()
+-- 查看最后一个id的插入的数据
+mysql> select last_insert_id();
+
+-- 还希望模拟数据的时候接着使用这个自增长
+-- 修改自增长的初始值.
+mysql> alter table comment_aly auto_increment=6;
+
+-- 比如数据就是自己插入进去的
+insert into comment_aly(video_id,comment_num) values(1,3);
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><blockquote>
+<p>hive+hbase[分布式数据库] - 大数据</p>
+<p>数据分析业务</p>
+<ol>
+<li><p>数据的获取</p>
+<p>1-1. 爬数据 - 爬虫 - 大公司都有反爬技术[前端的js算法是公开的.万一被破解了.需要重新制定算法]</p>
+<p>爬虫工程师 = 低级的[网站没有反爬技术]和高级的[反爬]</p>
+<pre class="line-numbers language-java"><code class="language-java">验证发展历程 <span class="token operator">-</span> 为了阻止程序模拟用户进行登录的过程<span class="token punctuation">.</span>
+<span class="token number">1</span><span class="token punctuation">.</span> 早期是没有验证码 <span class="token operator">-</span> 模拟用户登录的程序不断去尝试登录的过程<span class="token punctuation">.</span>
+   <span class="token operator">-</span> 网站可能卡死
+  
+<span class="token number">2</span><span class="token punctuation">.</span> 简单的文字或者数字框<span class="token operator">/</span>弹出框 <span class="token number">1</span><span class="token operator">+</span><span class="token number">1</span><span class="token operator">=</span><span class="token operator">?</span>  <span class="token number">1</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">=</span><span class="token operator">?</span>
+  
+<span class="token number">3</span><span class="token punctuation">.</span> 图片验证码 <span class="token operator">-</span> 图像处理技术<span class="token operator">-</span>识别出图像中的文字的
+   图片中文字尽可能做得非常非常非常模糊<span class="token punctuation">,</span>颠倒 <span class="token operator">-</span> 程序识别不出来<span class="token punctuation">.</span>
+  
+<span class="token number">4</span><span class="token punctuation">.</span> 手机验证<span class="token operator">/</span>滑动块 <span class="token operator">-</span> 区分程序在操作还是人操作
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>1-2. 日志文件 - 比如后台会记录用户的行为轨迹 - 透露出用户的爱好.</p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li><p>数据的清洗</p>
+<p>日志文件/爬过来的数据 [字段比较多的.需要在有<strong>业务经验</strong>的基础之上]需要对若干个字段进行进一步的筛选工作.</p>
+<p>把关心的和业务相关的字段清洗出来.</p>
+</li>
+<li><p>数据的分析</p>
+<p>找出某个分类的共性的特征.比如代码好的-睡眠时间长,敲代码时间比较长等…</p>
+</li>
+<li><p>数据的挖掘</p>
+<p>金融行业,房地产行业</p>
+<p>根据数据分析的结果来预判下一次的结果 - 建模</p>
+<p>理想状态中 -&gt; y = ax + b;</p>
+<p>现实状态中,不可能得到一个100%的模型的 - 最优模型-最优的解-模型的准确率</p>
+<p>x值,y值 -&gt; y=ax+b</p>
+<p>x     y     -&gt;    z</p>
+<p>8h   3h   - &gt; good</p>
+<p>8.5h 3.5h -&gt; good</p>
+<p>1h 30min -&gt; error</p>
+<p>…</p>
+<p>…</p>
+<p>…</p>
+<p>…</p>
+<p>x和y与z之间的关系</p>
+<p>未来接触到了新生,8.8h,10h -&gt; 可能是good[概率高于error]</p>
+</li>
+</ol>
+</blockquote>
+<h1 id="delete语句"><a href="#delete语句" class="headerlink" title="delete语句"></a>delete语句</h1><blockquote>
+<ol>
+<li><p>清空表 - delete语句不带where</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">delete from 表名;
+
+delete from video_copy;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>带条件的删除 - 删除1条,不删除,删除多条</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">delete from 表名 where语句;
+
+-- 删除video_copy表中id=2的行记录
+delete from video_copy where id=2;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<h1 id="update语句"><a href="#update语句" class="headerlink" title="update语句"></a>update语句</h1><blockquote>
+<ol>
+<li><p>更新的整张表的数据 - 不带where语句</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">语法:
+-- 更新所有的行的单列
+update 表名 set 列名=新的列值;
+
+-- 更新所有的行的多列.
+update 表名 set 列1=新的列值1,列2=新的列值2,列n=新的列值n;
+
+-- 比如更新video_copy表中的likes
+update video_copy set likes=likes*1.1;
+
+-- 比如更新video_copy表中的likes和title
+update video_copy set likes=200,title='java无敌';
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>更新指定条件的行记录 - where语句</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">更新id=2的title
+update video_copy set title='python不错' where id=2;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+<h1 id="总结约束注意点"><a href="#总结约束注意点" class="headerlink" title="总结约束注意点"></a>总结约束注意点</h1><blockquote>
+<p><strong>列添加了约束,需要注意的地方有哪些</strong></p>
+<ol>
+<li> 先删除多的一方表,再删除的一的一方的表</li>
+<li> 删除行记录的时候,需要先把这个行记录在其他表中被引用的行记录要全部删除之后,才能删除自己.</li>
+<li> 创建表的时候,应该先创建一的一方,然后创建多的一方</li>
+</ol>
+</blockquote>
+<h2 id="删除表-1"><a href="#删除表-1" class="headerlink" title="删除表"></a>删除表</h2><pre class="line-numbers language-mysql"><code class="language-mysql">-- 删除表不是随意删除的 - 前提是创建了外键约束
+--  先删除多的一方表,再删除的一的一方的表
+drop table tbl_comment;
+drop table tbl_user;
+drop table tbl_video;
+
+-- 用户表
+create table tbl_user(
+  id int(7) primary key,
+  username varchar(20) not null unique
+);
+insert into tbl_user values(1,'tom');
+insert into tbl_user values(2,'admin');
+
+-- 视频表
+create table tbl_video(
+    id int(7) primary key,
+  title varchar(20),
+  likes int(7),
+  create_time datetime default now(),
+  -- 外键列命名方式 表名_另外一张表的引用列名[主键列]
+  -- 外键列的数据类型和长度和你引用的地方保持一致
+  tbl_user_id int(7),
+  -- 表级添加
+  constraint tbl_video_table_user_id_fk foreign key(tbl_user_id) references tbl_user(id)
+);
+-- 一旦创建了约束,插入数据的时候需要注意的是.
+-- 外键列是允许为空的.
+insert into tbl_video values(1,'学好myql',100,now(),1);
+insert into tbl_video values(2,'学好java',100,now(),1);
+insert into tbl_video values(3,'学习jdbc',100,now(),2);
+
+-- 评论表
+create table tbl_comment(
+    id int(7) primary key,
+  user_id int(7),
+  video_id int(7),
+  content varchar(50),
+  comment_id int(7),
+  constraint tbl_comment_user_id_fk foreign key(user_id) references tbl_user(id),
+  constraint tbl_comment_video_id_fk foreign key(video_id) references tbl_video(id),
+  constraint tbl_comment_id_fk foreign key(comment_id) references tbl_comment(id)
+);
+insert into tbl_comment(id,user_id,video_id,content) values(1,1,1,'好的,我会学会mysql的');
+insert into tbl_comment values(2,2,1,'好的,我会学会mysql的',1);
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>分析删除表的顺序</code></p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">-- 如果删除的是tbl_user或者tbl_video都会报错
+-- 报错的原因就是由外键约束存在导致的
+
+mysql> drop table tbl_user;
+ERROR 1217 (23000): Cannot delete or update a parent row: a foreign key constraint fails
+mysql> drop table tbl_video;
+ERROR 1217 (23000): Cannot delete or update a parent row: a foreign key constraint fails
+
+-- 应该要先删除子记录[外键所在的表中的记录],然后再删除父记录 - 先删除多的一方表,再删除的一的一方的表
+-- 多的一方的外键引用的是一的一方的主键.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="删除行记录"><a href="#删除行记录" class="headerlink" title="删除行记录"></a>删除行记录</h2><pre class="line-numbers language-mysql"><code class="language-mysql">-- id=2的用户是在tbl_comment中存在一条行记录的,它是被引用了.
+mysql> delete from tbl_user where id=2;
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`j03s`.`tbl_comment`, CONSTRAINT `tbl_comment_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `tbl_user` (`id`))
+
+-- id=2的所有的评论的全部删除[删除子记录],然后再去删除id=2的用户
+mysql> delete from tbl_comment where user_id=2;
+
+-- 然后才能去删除id=2的用户,已经把用户id=2这个用户的所有的评论全部删除了
+mysql> delete from tbl_user where id=2;
+
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`j03s`.`tbl_video`, CONSTRAINT `tbl_video_table_user_id_fk` FOREIGN KEY (`tbl_user_id`) REFERENCES `tbl_user` (`id`))
+
+id=2的用户又发布了一条视频,它也在tbl_video表中被引用了.
+mysql> delete from tbl_video where tbl_user_id=2;
+
+-- 等把id=2的用户的所有评论信息以及发布的视频全部删除完毕之后,才可以删除自己
+mysql> delete from tbl_user where id=2;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="约束的缺点"><a href="#约束的缺点" class="headerlink" title="约束的缺点"></a>约束的缺点</h2><blockquote>
+<p>外键约束 - 保证数据的完整性和一致性.缺点 - 表之间的关系越强烈[手动创建了约束条件] - 表之间的耦合越高.</p>
+<p>在下周DB设计 - <strong>不要手动创建约束</strong> - 弱化表之间的关系 - <strong>“表的关系 - 心中”</strong></p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">驰星CRM系统 - 学生信息,项目经理信息
+
+-- 假设一个项目经理可以教多个学生
+-- dev_id是外键列
+student(id,sname,school,dev_id);
+1 杨晓轩 文正养老学院 2
+2 闫昊   八一农垦    1
+3 刘静   八一农垦    2
+
+dev(id,dev_name,age);
+1 success 18
+2 james  45
+3 小强    19
+
+如果建表的时候
+create table student(
+    //...
+
+foreign key(dv_id) references dev(id);
+);
+
+-- 导致的后果,不能随意删除项目经理.项目经理只要有学生信息.就不能删除项目经理.
+
+-- 现实生活中 - success上台了,james开除了...
+mysql> delete from dev where id=2;//删除失败了.因为james在student表中有子记录
+-- 要想删除james,需要删除他所有的学生.实际的业务 - 肯定不允许我去删除"宝贵的学生信息"
+
+-- 目标 - 1. 成功删除项目经理
+--       2. 知道学生曾经是哪个老师带过的.
+
+-- 因此,在建表的时候,其实是允许数据的冗余性的.
+drop table t_student;
+drop table dev;
+create table dev(
+    id int(7) primary key auto_increment,
+dev_name varchar(20),
+age int(3)
+);
+insert into dev values(1,'success',18);
+insert into dev values(2,'james',45);
+
+create table t_student(
+    id int(7) primary key auto_increment,
+sname varchar(20),
+school varchar(20),
+-- 此处没有进行约束的添加 - "关系在心中即可"
+dev_id int(7),
+-- 数据的冗余 - 防止项目经理的记录被删除
+dev_name varchar(20)
+);
+insert into t_student values(1,'杨晓轩','文正养老学院',2,'james');
+insert into t_student values(2,'闫昊','八一农垦',1,'success');
+insert into t_student values(3,'刘静','八一农垦',1,'success');
+
+-- 虽然没有给dev_id列创建约束,业务分析可以确定该列就是用来"维护俩表之间的关系的"
+-- 查询学生的姓名以及项目经理的姓名以及年龄
+mysql> select s.sname,d.dev_name,d.age from t_student s join dev d on s.dev_id=d.id;
+
+-- 开除james,没有约束,可以直接删除
+mysql> delete from dev where id=2;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h1 id="物理删除和逻辑删除"><a href="#物理删除和逻辑删除" class="headerlink" title="物理删除和逻辑删除"></a>物理删除和逻辑删除</h1><blockquote>
+<ol>
+<li><p>物理删除就是真正意义上的delete语句</p>
+</li>
+<li><p><strong>逻辑删除 - 建议 - 比较安全.</strong></p>
+<p>因为数据是不能随意删除的.数据是需要后台进行数据分析的.<strong>用户的端的删除大部分都是逻辑删除.</strong></p>
+<p>实际上就是每张表都会增加逻辑列.</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">drop table xx_del;
+create table xx_del(
+    id int(7) primary key,
+  name varchar(20),
+  status int(7)
+);
+insert into xx_del values(1,'tom',0);
+insert into xx_del values(2,'admin',0);
+
+-- 首页 - 加载xx_del表中所有的信息
+-- 查询逻辑列 - 把status=0的行记录全部加载
+List<XX> list = "select * from xx_del where status=0";
+
+-- 删除按钮 - 删除 - 实际上是逻辑删 - 并不会执行delete语句,执行的是update语句
+update xx_del set status=1 where id=1;
+
+-- 再去根据status=0去加载,给用户端的感觉好像是这条记录被删除了.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">码农耕地人</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2021/08/19/DDL/">http://example.com/2021/08/19/DDL/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">码农耕地人</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/MySQL/">
+                                    <span class="chip bg-color">MySQL</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/08/19/%E6%95%B0%E6%8D%AE%E4%BA%8B%E5%8A%A1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="数据事务">
+                        
+                        <span class="card-title">数据事务</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/mysql/" class="post-category">
+                                    mysql
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/08/19/DQL%E6%9F%A5%E8%AF%A2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="DQL查询">
+                        
+                        <span class="card-title">DQL查询</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/mysql/" class="post-category">
+                                    mysql
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录
+            </div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fas fa-list-ul"></i>
+        </a>
+    </div>
+    
+
+        <script src="/libs/tocbot/tocbot.min.js"></script>
+        <script>
+            $(function () {
+                tocbot.init({
+                    tocSelector: '#toc-content',
+                    contentSelector: '#articleContent',
+                    headingsOffset: -($(window).height() * 0.4 - 45),
+                    collapseDepth: Number('0'),
+                    headingSelector: 'h2, h3, h4'
+                });
+
+                // modify the toc link href to support Chinese.
+                let i = 0;
+                let tocHeading = 'toc-heading-';
+                $('#toc-content a').each(function () {
+                    $(this).attr('href', '#' + tocHeading + (++i));
+                });
+
+                // modify the heading title id to support Chinese.
+                i = 0;
+                $('#articleContent').children('h2, h3, h4').each(function () {
+                    $(this).attr('id', tocHeading + (++i));
+                });
+
+                // Set scroll toc fixed.
+                let tocHeight = parseInt($(window).height() * 0.4 - 64);
+                let $tocWidget = $('.toc-widget');
+                $(window).scroll(function () {
+                    let scroll = $(window).scrollTop();
+                    /* add post toc fixed. */
+                    if (scroll > tocHeight) {
+                        $tocWidget.addClass('toc-fixed');
+                    } else {
+                        $tocWidget.removeClass('toc-fixed');
+                    }
+                });
+
+        
+                    /* 修复文章卡片 div 的宽度. */
+                    let fixPostCardWidth = function (srcId, targetId) {
+                        let srcDiv = $('#' + srcId);
+                        if (srcDiv.length === 0) {
+                            return;
+                        }
+
+                        let w = srcDiv.width();
+                        if (w >= 450) {
+                            w = w + 21;
+                        } else if (w >= 350 && w < 450) {
+                            w = w + 18;
+                        } else if (w >= 300 && w < 350) {
+                            w = w + 16;
+                        } else {
+                            w = w + 14;
+                        }
+                        $('#' + targetId).width(w);
+                    };
+
+                    // 切换TOC目录展开收缩的相关操作.
+                    const expandedClass = 'expanded';
+                    let $tocAside = $('#toc-aside');
+                    let $mainContent = $('#main-content');
+                    $('#floating-toc-btn .btn-floating').click(function () {
+                        if ($tocAside.hasClass(expandedClass)) {
+                            $tocAside.removeClass(expandedClass).hide();
+                            $mainContent.removeClass('l9');
+                        } else {
+                            $tocAside.addClass(expandedClass).show();
+                            $mainContent.addClass('l9');
+                        }
+                        fixPostCardWidth('artDetail', 'prenext-posts');
+                    });
+        
+    });
+        </script>
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">码农耕地人</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">336.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zhugefeng/zhugefeng.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:156035828@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=156035828" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 156035828" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/xxx" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/xxx" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"left"},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+
+</html>
